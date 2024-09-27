@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/widget/appbar/appbar.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/appbar/appbar.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story.dart';
 
 class InstagramMain extends StatelessWidget {
   const InstagramMain({super.key});
@@ -9,7 +10,8 @@ class InstagramMain extends StatelessWidget {
     return const Scaffold(
       body: Column(
         children: [
-          Appbar()
+          Appbar(),
+          Story(),
         ],
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagram_main.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
 
 void main() {
   runApp(const MyApp());

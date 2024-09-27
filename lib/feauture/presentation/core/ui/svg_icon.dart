@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AppSvgPicture extends StatelessWidget {
-  final String assetPath;
+class CustomSvgIcon extends StatelessWidget {
+  final String assetName;
   final Color? color;
-  final double? width;
-  final double? height;
+  final double width;
+  final double height;
 
-  const AppSvgPicture(
-    this.assetPath, {
+  const CustomSvgIcon({
+    Key? key,
+    required this.assetName, 
     this.color,
-    this.width,
-    this.height,
-    super.key,
-  });
+    required this.width ,
+    required this.height ,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      assetPath,
+      assetName,
+      color: color,
       width: width,
       height: height,
-      colorFilter: color != null
-          ? ColorFilter.mode(
-              color!,
-              BlendMode.srcIn,
-            )
-          : null,
     );
   }
 }
