@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/appbar/appbar.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/post.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story.dart';
 
 class InstagramMain extends StatelessWidget {
@@ -12,6 +13,7 @@ class InstagramMain extends StatelessWidget {
         children: [
           Appbar(),
           Story(),
+          Post(),
         ],
       ),
     );
