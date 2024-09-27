@@ -6,6 +6,13 @@ class Story extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> imagePaths = [
+      Assets.storyImage,
+      Assets.storyImage1,
+      Assets.storyImage2,
+      Assets.storyImage3,
+      Assets.storyImage4,
+    ];
     return Container(
       width: double.infinity,
       height: 100,
@@ -18,39 +25,43 @@ class Story extends StatelessWidget {
               height: 300, // Высота ListView
               child: ListView.builder(
                 scrollDirection: Axis.horizontal, // Горизонтальный ListView
-                itemCount: 10, // Количество элементов
+                itemCount: imagePaths.length, // Количество элементов
                 itemBuilder: (context, index) {
                   return Stack(children: [
-                    Container(
-                      width: 85, // Диаметр круга
-                      height: 90,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blue,
-                            Colors.purple
-                          ], // Градиентные цвета
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                        width: 80, // Диаметр круга
+                        height: 90,
+                        decoration:const BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color(0xffFBAA47),
+                              Color(0xffD91A46),
+                              Color(0xffA60F93),
+                            ], // Градиентные цвета
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                         ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(
-                            5.0), // Толщина градиентной рамки
-                        child: Container(
-                width: 70, // Диаметр внутреннего круга
-                height: 70,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage(
-                      Assets.storyImage, // Путь к изображению
-                    ),
-                    fit: BoxFit.cover, // Подгонка изображения
-                  ),
-                ),
-              ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(
+                              5.0), // Толщина градиентной рамки
+                          child: Container(
+                            width: 60, // Диаметр внутреннего круга
+                            height: 60,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage(
+                                 imagePaths[index] , // Путь к изображению
+                                ),
+                                fit: BoxFit.cover, // Подгонка изображения
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ]);
