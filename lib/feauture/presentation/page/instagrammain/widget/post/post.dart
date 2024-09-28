@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/comments.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_post.dart';
 
 class Post extends StatefulWidget {
   const Post({super.key});
@@ -15,49 +16,10 @@ class _PostState extends State<Post> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                const SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  width: 30, 
-                  height: 30,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage(
-                        Assets.postUserImage, // Путь к изображению
-                      ),
-                      fit: BoxFit.cover, // Подгонка изображения
-                    ),
-                  ),
-                ),
-                const Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text('data'),
-                        Icon(Icons.add),
-                      ],
-                    ),
-                    Text('data,data'),
-                  ],
-                ),
-              ],
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.access_time),
-            )
-          ],
-        ),
+        const UserPost(),
         Container(
           width: double.infinity,
-          height: 350,
+          height: 375,
           child: Image.asset(
             Assets.postImage,
             fit: BoxFit.cover,

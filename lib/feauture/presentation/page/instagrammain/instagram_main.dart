@@ -9,12 +9,14 @@ class InstagramMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          Appbar(),
-          Story(),
-          Post(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Appbar(),
+            Story(),
+            Post(),
+          ],
+        ),
       ),
     );
   }

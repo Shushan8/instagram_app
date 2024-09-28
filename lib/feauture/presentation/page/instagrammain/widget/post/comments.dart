@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
 
 class Comments extends StatelessWidget {
   const Comments({super.key});
@@ -8,26 +9,19 @@ class Comments extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           width: 15,
         ),
-        Row(
+        const Row(
           children: [
-            const SizedBox(
+            SizedBox(
               width: 15,
             ),
-            Container(
+            UserPhotoCircle(
               height: 20,
               width: 20,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Image.asset(
-                Assets.postUserImage,
-                fit: BoxFit.cover,
-              ),
             ),
-            const Text('Liked by User and 44000 other'),
+            Text('Liked by User and 44000 other'),
           ],
         ),
         RichText(

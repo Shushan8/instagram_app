@@ -16,6 +16,9 @@ class Story extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 100,
+      decoration: BoxDecoration(
+          border: Border.all(
+              width: 0.1, color: const Color.fromARGB(255, 120, 119, 119))),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal, // Горизонтальная прокрутка
         child: Row(
@@ -33,7 +36,7 @@ class Story extends StatelessWidget {
                       child: Container(
                         width: 80, // Диаметр круга
                         height: 90,
-                        decoration:const BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
                             colors: [
@@ -49,16 +52,15 @@ class Story extends StatelessWidget {
                           padding: const EdgeInsets.all(
                               4.0), // Толщина градиентной рамки
                           child: Container(
-                           
                             width: 60, // Диаметр внутреннего круга
                             height: 60,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.white, width: 3),
-                               color: Colors.white,
+                              color: Colors.white,
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: AssetImage(
-                                 imagePaths[index] , // Путь к изображению
+                                  imagePaths[index], // Путь к изображению
                                 ),
                                 fit: BoxFit.cover, // Подгонка изображения
                               ),

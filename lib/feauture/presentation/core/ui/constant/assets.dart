@@ -6,7 +6,7 @@ class Assets {
   static const String homeIcon = 'assets/icon/home.svg';
   static const String likeIcon = 'assets/icon/like.svg';
   static const String moreIcon = 'assets/icon/more.svg';
-  static const String officialIcon = 'assets/icon/Official icon.svg';
+  static const String officialIcon = 'assets/icon/official.svg';
   static const String saveIcon = 'assets/icon/save.svg';
   static const String searchIcon = 'assets/icon/search.svg';
   static const String sendIcon = 'assets/icon/send.svg';
@@ -20,5 +20,4 @@ class Assets {
   static const String storyImage2 = 'assets/image/storyimage2.png';
   static const String storyImage3 = 'assets/image/storyimage3.png';
   static const String storyImage4 = 'assets/image/storyimage4.png';
-
 }
