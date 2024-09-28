@@ -47,11 +47,14 @@ class Story extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(
-                              5.0), // Толщина градиентной рамки
+                              4.0), // Толщина градиентной рамки
                           child: Container(
+                           
                             width: 60, // Диаметр внутреннего круга
                             height: 60,
                             decoration: BoxDecoration(
+                              border: Border.all(color: Colors.white, width: 3),
+                               color: Colors.white,
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: AssetImage(
