@@ -11,6 +11,9 @@ class Assets {
   static const String searchIcon = 'assets/icon/search.svg';
   static const String sendIcon = 'assets/icon/send.svg';
   static const String tvIcon = 'assets/icon/tv.svg';
+  static const String emptyHomeIcon = 'assets/icon/emptyhome.svg';
+  static const String likeNavigatorIcon = 'assets/icon/likenavigator.svg';
+  static const String searchNavigatorIcon = 'assets/icon/searchnavigator';
   //image
   static const String logoImage = 'assets/image/Instagram Logo.png';
   static const String postImage = 'assets/image/postimage.png';

@@ -11,48 +11,53 @@ class UserPost extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Row(
-          children: [
-            SizedBox(
-              width: 15,
-            ),
-            UserPhotoCircle(
-              height: 35,
-              width: 35,
-            ),
-            Column(
-              children: [
-                Row(
+    const    Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: Row(
+            children: [
+              UserPhotoCircle(
+                height: 35,
+                width: 35,
+                assetsImage: AssetImage(
+                  Assets.postUserImage,
+                  // Путь к изображению
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'joshua_l',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          'joshua_l',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        CustomSvgIcon(
+                          assetName: Assets.officialIcon,
+                          width: 15,
+                          height: 15,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    CustomSvgIcon(
-                      assetName: Assets.officialIcon,
-                      width: 15,
-                      height: 15,
+                    Row(
+                      children: [
+                        Text(
+                          'Armenia,Erevan',
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      'Armenia,Erevan',
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
         IconButton(
           onPressed: () {},

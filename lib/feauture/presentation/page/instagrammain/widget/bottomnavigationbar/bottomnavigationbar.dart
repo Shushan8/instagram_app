@@ -97,7 +97,10 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: UserPhotoCircle(height: 25, width: 25),
+            icon: UserPhotoCircle(height: 25, width: 25, assetsImage: AssetImage(
+            Assets.postUserImage,
+            // Путь к изображению
+          ),),
             label: '',
           ),
         ],
