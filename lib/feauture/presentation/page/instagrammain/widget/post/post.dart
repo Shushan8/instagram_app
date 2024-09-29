@@ -13,9 +13,16 @@ class Post extends StatefulWidget {
 
 class _PostState extends State<Post> {
   bool isLiked = false;
+  bool isSaved = false;
   void liked() {
     setState(() {
       isLiked = !isLiked;
+    });
+  }
+
+  void onSaved() {
+    setState(() {
+      isSaved = !isSaved;
     });
   }
 
@@ -40,8 +47,12 @@ class _PostState extends State<Post> {
                 IconButton(
                   onPressed: liked,
                   icon: isLiked
-                      ? const Icon(
-                          Icons.star_border_purple500_rounded) // --------
+                      ? const CustomSvgIcon(
+                          assetName: Assets.likeNavigatorIcon,
+                          width: 25,
+                          height: 25,
+                          color: Colors.red,
+                        )
                       : const CustomSvgIcon(
                           assetName: Assets.likeIcon,
                           width: 25,
@@ -66,13 +77,17 @@ class _PostState extends State<Post> {
                 ),
               ],
             ),
-            const Row(
+            Row(
               children: [
-                CustomSvgIcon(
-                  assetName: Assets.saveIcon,
-                  width: 25,
-                  height: 25,
-                ),
+                IconButton(
+                    onPressed: onSaved,
+                    icon: isSaved
+                        ? const Icon(Icons.save)
+                        : const CustomSvgIcon(
+                            assetName: Assets.saveIcon,
+                            width: 25,
+                            height: 25,
+                          )),
                 SizedBox(
                   width: 15,
                 ),

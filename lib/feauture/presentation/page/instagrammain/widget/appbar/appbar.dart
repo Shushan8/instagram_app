@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 
-class Appbar extends StatelessWidget {
-  const Appbar({super.key});
+class MyAppbar extends StatelessWidget {
+  const MyAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {

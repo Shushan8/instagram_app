@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/appbar/appbar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/post.dart';
@@ -13,20 +12,24 @@ class InstagramMain extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Appbar(),
-          const Story(),
+          const MyAppbar(),
           SingleChildScrollView(
-            child: SizedBox(
-              height: 570,
-              width: double.infinity,
-              child: ListView.builder(
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return const Padding(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: Post(),
-                    );
-                  }),
+            child: Column(
+              children: [
+                const Story(),
+                SizedBox(
+                  height: 570,
+                  width: double.infinity,
+                  child: ListView.builder(
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        return const Padding(
+                          padding: EdgeInsets.only(bottom: 20),
+                          child: Post(),
+                        );
+                      }),
+                ),
+              ],
             ),
           ),
         ],
