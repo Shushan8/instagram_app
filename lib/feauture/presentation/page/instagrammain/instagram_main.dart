@@ -9,6 +9,7 @@ class InstagramMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SingleChildScrollView( 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -25,6 +26,7 @@ class InstagramMain extends StatelessWidget {
                   child: Post(), 
                 );
               },
+
             ),
           ],
         ),

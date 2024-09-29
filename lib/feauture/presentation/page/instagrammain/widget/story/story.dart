@@ -24,7 +24,6 @@ class Story extends StatelessWidget {
         child: Row(
           children: [
             Container(
-
               width: 400, // Ширина ListView
               height: 100, // Высота ListView
               child: ListView.builder(

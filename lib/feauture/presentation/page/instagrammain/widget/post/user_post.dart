@@ -11,7 +11,7 @@ class UserPost extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-    const    Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Row(
             children: [
@@ -24,7 +24,7 @@ class UserPost extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
