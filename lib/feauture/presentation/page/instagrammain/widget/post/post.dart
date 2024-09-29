@@ -12,12 +12,19 @@ class Post extends StatefulWidget {
 }
 
 class _PostState extends State<Post> {
+  bool isLiked = false;
+  void liked() {
+    setState(() {
+      isLiked = !isLiked;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const UserPost(),
-        Container(
+        SizedBox(
           width: double.infinity,
           height: 375,
           child: Image.asset(
@@ -25,41 +32,41 @@ class _PostState extends State<Post> {
             fit: BoxFit.cover,
           ),
         ),
-        const SizedBox(
-          height: 15,
-        ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                SizedBox(
-                  width: 15,
+                IconButton(
+                  onPressed: liked,
+                  icon: isLiked
+                      ? const Icon(
+                          Icons.star_border_purple500_rounded) // --------
+                      : const CustomSvgIcon(
+                          assetName: Assets.likeIcon,
+                          width: 25,
+                          height: 25,
+                        ),
                 ),
-                 CustomSvgIcon(
-                  assetName: Assets.likeIcon,
-                  width: 25,
-                  height: 25,
+                IconButton(
+                  onPressed: () {},
+                  icon: const CustomSvgIcon(
+                    assetName: Assets.commentIcon,
+                    width: 25,
+                    height: 25,
+                  ),
                 ),
-                SizedBox(
-                  width: 15,
-                ),
-                CustomSvgIcon(
-                  assetName: Assets.commentIcon,
-                  width: 25,
-                  height: 25,
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                CustomSvgIcon(
-                  assetName: Assets.sendIcon,
-                  width: 25,
-                  height: 25,
+                IconButton(
+                  onPressed: () {},
+                  icon: const CustomSvgIcon(
+                    assetName: Assets.sendIcon,
+                    width: 25,
+                    height: 25,
+                  ),
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 CustomSvgIcon(
                   assetName: Assets.saveIcon,
