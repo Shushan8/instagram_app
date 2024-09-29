@@ -14,6 +14,13 @@ class Assets {
   static const String emptyHomeIcon = 'assets/icon/emptyhome.svg';
   static const String likeNavigatorIcon = 'assets/icon/likenavigator.svg';
   static const String searchNavigatorIcon = 'assets/icon/searchnavigator';
+  static const String accountsListIcon = 'assets/icon/Accounts_List.svg';
+  static const String addStoryIcon = 'assets/icon/Add_Story.svg';
+  static const String gridIcon = 'assets/icon/Grid_icon.svg';
+  static const String menuIcon = 'assets/icon/Menu.svg';
+  static const String privateIcon = 'assets/icon/Private_Icon.svg';
+  static const String tagsIcon = 'assets/icon/Tags_Icon.svg';
+  static const String videoIcon = 'assets/icon/Video_Icon.svg';
   //image
   static const String logoImage = 'assets/image/Instagram Logo.png';
   static const String postImage = 'assets/image/postimage.png';

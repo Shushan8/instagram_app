@@ -3,6 +3,7 @@ import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/instagram_profile.dart';
 
 class BottomNavigationBarApp extends StatelessWidget {
   const BottomNavigationBarApp({super.key});
@@ -38,9 +39,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
     Text(
       'Index 3: School',
     ),
-    Text(
-      'Index 4: School',
-    ),
+   InstagramProfile()
   ];
 
   void _onItemTapped(int index) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 
 class UserPhotoCircle extends StatelessWidget {
   const UserPhotoCircle({super.key, required this.height, required this.width, required this.assetsImage});

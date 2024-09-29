@@ -22,6 +22,8 @@ class _PostState extends State<Post> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const UserPost(),
         SizedBox(
