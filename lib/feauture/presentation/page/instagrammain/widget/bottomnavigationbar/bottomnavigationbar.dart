@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
 
 class BottomNavigationBarApp extends StatelessWidget {
   const BottomNavigationBarApp({super.key});
@@ -55,45 +56,53 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        type: BottomNavigationBarType.fixed,
+        items: const [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
+            icon: CustomSvgIcon(
+              assetName: Assets.cameraIcon,
+              width: 22,
+              height: 24,
+              
+            ),
+            activeIcon: CustomSvgIcon(
+              assetName: Assets.homeIcon,
+              width: 22,
+              height: 24,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
               assetName: Assets.searchIcon,
-              width: 15,
-              height: 15,
+              width: 22,
+              height: 24,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
               assetName: Assets.addIcon,
-              width: 15,
-              height: 15,
+              width: 22,
+              height: 24,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
               assetName: Assets.likeIcon,
-              width: 15,
-              height: 15,
+              width: 22,
+              height: 24,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school, color: Colors.black),
+            icon: UserPhotoCircle(height: 25, width: 25),
             label: '',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        
         onTap: _onItemTapped,
       ),
     );

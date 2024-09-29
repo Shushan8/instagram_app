@@ -36,7 +36,7 @@ class _PostState extends State<Post> {
                 SizedBox(
                   width: 15,
                 ),
-                CustomSvgIcon(
+                 CustomSvgIcon(
                   assetName: Assets.likeIcon,
                   width: 25,
                   height: 25,
