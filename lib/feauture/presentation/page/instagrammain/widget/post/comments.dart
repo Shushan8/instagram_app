@@ -21,16 +21,17 @@ class Comments extends StatelessWidget {
                 UserPhotoCircle(
                   height: 20,
                   width: 20,
-                  assetsImage:
-                   AssetImage(
-                Assets.images.storyimage4.path,
-              ),
+                  assetsImage: AssetImage(
+                    Assets.images.storyimage4.path,
+                  ),
                   //  AssetImage(
                   //   Assets.images.storyimage4 as String
-            // Assets.storyImage4,
-          // ),
+                  // Assets.storyImage4,
+                  // ),
                 ),
-                SizedBox(width: 5,),
+                SizedBox(
+                  width: 5,
+                ),
                 RichText(
                   text: const TextSpan(
                     children: [
@@ -43,8 +44,7 @@ class Comments extends StatelessWidget {
                             fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                       TextSpan(
-                          text: 'and ',
-                          style: TextStyle(color: Colors.black)),
+                          text: 'and ', style: TextStyle(color: Colors.black)),
                       TextSpan(
                         text: '44,686 others',
                         style: TextStyle(
