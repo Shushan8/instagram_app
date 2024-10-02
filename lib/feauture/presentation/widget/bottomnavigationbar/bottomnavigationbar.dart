@@ -39,7 +39,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
     Text(
       'Index 3: School',
     ),
-   InstagramProfile()
+    InstagramProfile()
   ];
 
   void _onItemTapped(int index) {
@@ -62,7 +62,6 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
               assetName: Assets.cameraIcon,
               width: 22,
               height: 24,
-              
             ),
             activeIcon: CustomSvgIcon(
               assetName: Assets.homeIcon,
@@ -96,14 +95,17 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: UserPhotoCircle(height: 25, width: 25, assetsImage: AssetImage(
-            Assets.postUserImage,
-          ),),
+            icon: UserPhotoCircle(
+              height: 25,
+              width: 25,
+              assetsImage: AssetImage(
+                Assets.postUserImage,
+              ),
+            ),
             label: '',
           ),
         ],
         currentIndex: _selectedIndex,
-        
         onTap: _onItemTapped,
       ),
     );

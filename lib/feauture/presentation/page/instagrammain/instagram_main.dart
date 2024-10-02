@@ -9,24 +9,22 @@ class InstagramMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: SingleChildScrollView( 
+      appBar: const Appbar(),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Appbar(),
-            const Story(), 
+            const Story(),
             ListView.builder(
-              physics: const NeverScrollableScrollPhysics(), 
-              shrinkWrap: true, 
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
               itemCount: 4,
               itemBuilder: (context, index) {
                 return const Padding(
                   padding: EdgeInsets.only(bottom: 20),
-                  child: Post(), 
+                  child: Post(),
                 );
               },
-
             ),
           ],
         ),
