@@ -9,10 +9,10 @@ class CustomSvgIcon extends StatelessWidget {
 
   const CustomSvgIcon({
     super.key,
-    required this.assetName, 
+    required this.assetName,
     this.color,
-    required this.width ,
-    required this.height ,
+    required this.width,
+    required this.height,
   });
 
   @override
@@ -22,6 +22,7 @@ class CustomSvgIcon extends StatelessWidget {
       color: color,
       width: width,
       height: height,
+      fit: BoxFit.none,
     );
   }
 }
