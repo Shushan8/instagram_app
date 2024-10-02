@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
-
+import 'package:instagram_test_app/gen/assets.gen.dart';
  class Appbar extends StatelessWidget {
   const Appbar({super.key});
 
@@ -18,18 +17,18 @@ import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomSvgIcon(
-                    assetName: Assets.cameraIcon,
+                   CustomSvgIcon(
+                    assetName: Assets.icon.add,
                     width: 25,
                     height: 25,
                   ),
                  
-                  Image.asset(
-                    Assets.logoImage,
+                  Image.asset(  
+                    Assets.images.instagramLogo.path,
                   ),
-                const  Row(children:  [
+                  Row(children:  [
                      CustomSvgIcon(
-                    assetName: Assets.tvIcon,
+                    assetName: Assets.icon.tv,
                     width: 25,
                     height: 25,
                   ),
@@ -37,7 +36,7 @@ import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
                     width: 20,
                   ),
                    CustomSvgIcon(
-                    assetName: Assets.sendIcon,
+                    assetName: Assets.icon.send,
                     width: 25,
                     height: 25,
                   ),

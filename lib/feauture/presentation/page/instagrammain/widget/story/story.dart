@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Story extends StatelessWidget {
   const Story({super.key});
@@ -7,11 +7,12 @@ class Story extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> imagePaths = [
-      Assets.storyImage,
-      Assets.storyImage1,
-      Assets.storyImage2,
-      Assets.storyImage3,
-      Assets.storyImage4,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+
     ];
     return Container(
       width: double.infinity,
@@ -20,21 +21,21 @@ class Story extends StatelessWidget {
           border: Border.all(
               width: 0.1, color: const Color.fromARGB(255, 120, 119, 119))),
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal, // Горизонтальная прокрутка
+        scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            Container(
-              width: 400, // Ширина ListView
-              height: 100, // Высота ListView
+            SizedBox(
+              width: 400, 
+              height: 100, 
               child: ListView.builder(
-                scrollDirection: Axis.horizontal, // Горизонтальный ListView
-                itemCount: imagePaths.length, // Количество элементов
+                scrollDirection: Axis.horizontal, 
+                itemCount: imagePaths.length, 
                 itemBuilder: (context, index) {
                   return Stack(children: [
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Container(
-                        width: 80, // Диаметр круга
+                        width: 80, 
                         height: 90,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
@@ -43,16 +44,16 @@ class Story extends StatelessWidget {
                               Color(0xffFBAA47),
                               Color(0xffD91A46),
                               Color(0xffA60F93),
-                            ], // Градиентные цвета
+                            ], 
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(
-                              4.0), // Толщина градиентной рамки
+                              4.0), 
                           child: Container(
-                            width: 60, // Диаметр внутреннего круга
+                            width: 60, 
                             height: 60,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.white, width: 3),
@@ -60,9 +61,9 @@ class Story extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: AssetImage(
-                                  imagePaths[index], // Путь к изображению
+                                  imagePaths[index], 
                                 ),
-                                fit: BoxFit.cover, // Подгонка изображения
+                                fit: BoxFit.cover, 
                               ),
                             ),
                           ),

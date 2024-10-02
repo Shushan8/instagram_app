@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/instagram_profile.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class BottomNavigationBarApp extends StatelessWidget {
   const BottomNavigationBarApp({super.key});
@@ -39,7 +39,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
     Text(
       'Index 3: School',
     ),
-   InstagramProfile()
+    InstagramProfile()
   ];
 
   void _onItemTapped(int index) {
@@ -56,16 +56,15 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: const [
+        items:  [
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
-              assetName: Assets.cameraIcon,
+              assetName: Assets.icon.camera,
               width: 22,
               height: 24,
-              
             ),
             activeIcon: CustomSvgIcon(
-              assetName: Assets.homeIcon,
+              assetName: Assets.icon.home,
               width: 22,
               height: 24,
             ),
@@ -73,7 +72,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
           ),
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
-              assetName: Assets.searchIcon,
+              assetName: Assets.icon.search,
               width: 22,
               height: 24,
             ),
@@ -81,7 +80,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
           ),
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
-              assetName: Assets.addIcon,
+              assetName: Assets.icon.add,
               width: 22,
               height: 24,
             ),
@@ -89,21 +88,24 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
           ),
           BottomNavigationBarItem(
             icon: CustomSvgIcon(
-              assetName: Assets.likeIcon,
+              assetName: Assets.icon.like,
               width: 22,
               height: 24,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: UserPhotoCircle(height: 25, width: 25, assetsImage: AssetImage(
-            Assets.postUserImage,
-          ),),
+            icon: UserPhotoCircle(
+              height: 25,
+              width: 25,
+              assetsImage: AssetImage(
+                Assets.images.postuserimage.path,
+              ),
+            ),
             label: '',
           ),
         ],
         currentIndex: _selectedIndex,
-        
         onTap: _onItemTapped,
       ),
     );

@@ -6,7 +6,7 @@ class UserPhotoCircle extends StatelessWidget {
       required this.height,
       required this.width,
       required this.assetsImage});
-//
+
   final double width;
   final double height;
   final ImageProvider<Object> assetsImage;
@@ -20,7 +20,7 @@ class UserPhotoCircle extends StatelessWidget {
         shape: BoxShape.circle,
         image: DecorationImage(
           image: assetsImage,
-          fit: BoxFit.fill, // Подгонка изображения
+          fit: BoxFit.fill, 
         ),
       ),
     );

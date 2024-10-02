@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/comments.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_post.dart';
-
+import 'package:instagram_test_app/gen/assets.gen.dart';
 class Post extends StatefulWidget {
   const Post({super.key});
 
@@ -37,7 +36,7 @@ class _PostState extends State<Post> {
           width: double.infinity,
           height: 375,
           child: Image.asset(
-            Assets.postImage,
+            Assets.images.postimage.path,
             fit: BoxFit.cover,
           ),
         ),
@@ -49,30 +48,31 @@ class _PostState extends State<Post> {
                 IconButton(
                   onPressed: liked,
                   icon: isLiked
-                      ? const CustomSvgIcon(
-                          assetName: Assets.likeNavigatorIcon,
+                      ?  CustomSvgIcon(
+                          assetName: Assets.icon.likenavigator,
                           width: 25,
                           height: 25,
                           color: Colors.red,
                         )
-                      : const CustomSvgIcon(
-                          assetName: Assets.likeIcon,
+                      :  CustomSvgIcon(
+                          assetName: Assets.icon.like,
+                          // Assets.likeIcon,
                           width: 25,
                           height: 25,
                         ),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: const CustomSvgIcon(
-                    assetName: Assets.commentIcon,
+                  icon:  CustomSvgIcon(
+                    assetName: Assets.icon.comment,
                     width: 25,
                     height: 25,
                   ),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: const CustomSvgIcon(
-                    assetName: Assets.sendIcon,
+                  icon:  CustomSvgIcon(
+                    assetName: Assets.icon.send,
                     width: 25,
                     height: 25,
                   ),
@@ -85,8 +85,8 @@ class _PostState extends State<Post> {
                     onPressed: onSaved,
                     icon: isSaved
                         ? const Icon(Icons.save)
-                        : const CustomSvgIcon(
-                            assetName: Assets.saveIcon,
+                        :  CustomSvgIcon(
+                            assetName: Assets.icon.save,
                             width: 25,
                             height: 25,
                           )),

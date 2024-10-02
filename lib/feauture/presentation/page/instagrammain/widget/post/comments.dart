@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Comments extends StatelessWidget {
   const Comments({super.key});
@@ -21,10 +21,14 @@ class Comments extends StatelessWidget {
                 UserPhotoCircle(
                   height: 20,
                   width: 20,
-                  assetsImage: AssetImage(
-            Assets.storyImage4,
-            // Путь к изображению
-          ),
+                  assetsImage:
+                   AssetImage(
+                Assets.images.storyimage4.path,
+              ),
+                  //  AssetImage(
+                  //   Assets.images.storyimage4 as String
+            // Assets.storyImage4,
+          // ),
                 ),
                 SizedBox(width: 5,),
                 RichText(

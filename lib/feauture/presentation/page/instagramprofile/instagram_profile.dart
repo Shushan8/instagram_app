@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class InstagramProfile extends StatelessWidget {
   const InstagramProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const   Scaffold(
+    return    Scaffold(
       body: Column(
         children: [
           Padding(
@@ -18,19 +18,19 @@ class InstagramProfile extends StatelessWidget {
                 SizedBox(),
                 Row(children: [
                   CustomSvgIcon(
-                      assetName: Assets.privateIcon,
+                      assetName: Assets.icon.privateIcon,
                       width: 25,
                       height: 25,
                     ),
                     Text('data'),
                     CustomSvgIcon(
-                      assetName: Assets.accountsListIcon,
+                      assetName: Assets.icon.accountsList,
                       width: 25,
                       height: 25,
                     ),
                 ],),
                 CustomSvgIcon(
-                      assetName: Assets.menuIcon,
+                      assetName: Assets.icon.menu,
                       width: 25,
                       height: 25,
                     ),
