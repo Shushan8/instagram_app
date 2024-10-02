@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
-
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Story extends StatelessWidget {
