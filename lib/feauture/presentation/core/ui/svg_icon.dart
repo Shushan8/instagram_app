@@ -8,12 +8,12 @@ class CustomSvgIcon extends StatelessWidget {
   final double height;
 
   const CustomSvgIcon({
-    Key? key,
+    super.key,
     required this.assetName, 
     this.color,
     required this.width ,
     required this.height ,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

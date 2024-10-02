@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class UserPost extends StatelessWidget {
   const UserPost({super.key});
@@ -11,17 +11,21 @@ class UserPost extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Padding(
+         Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Row(
             children: [
               UserPhotoCircle(
                 height: 35,
                 width: 35,
-                assetsImage: AssetImage(
-                  Assets.postUserImage,
-                  // Путь к изображению
-                ),
+                assetsImage:
+                AssetImage(
+                Assets.images.postuserimage.path,
+              ),
+                // Image.asset(Assets.images.postuserimage.path)
+                //  AssetImage(
+                //   ,
+                // ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
@@ -40,7 +44,7 @@ class UserPost extends StatelessWidget {
                           width: 5,
                         ),
                         CustomSvgIcon(
-                          assetName: Assets.officialIcon,
+                          assetName: Assets.icon.official,
                           width: 15,
                           height: 15,
                         ),
@@ -61,8 +65,8 @@ class UserPost extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {},
-          icon: const CustomSvgIcon(
-            assetName: Assets.moreIcon,
+          icon:  CustomSvgIcon(
+            assetName: Assets.icon.more,
             width: 3,
             height: 5,
           ),

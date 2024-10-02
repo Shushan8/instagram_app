@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/constant/assets.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/bold_text.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class InstagramProfile extends StatelessWidget {
   const InstagramProfile({super.key});
@@ -11,10 +11,11 @@ class InstagramProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> imagePaths = [
-      Assets.storyImage1,
-      Assets.storyImage2,
-      Assets.storyImage3,
-      Assets.storyImage4,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
     ];
 
     return Scaffold(
@@ -25,25 +26,25 @@ class InstagramProfile extends StatelessWidget {
             padding: EdgeInsets.only(top: 50),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
+              children: [
                 SizedBox(),
                 Row(
                   children: [
                     CustomSvgIcon(
-                      assetName: Assets.privateIcon,
-                      width: 9,
-                      height: 12,
+                      assetName: Assets.icon.privateIcon,
+                      width: 25,
+                      height: 25,
                     ),
                     Text('data'),
                     CustomSvgIcon(
-                      assetName: Assets.accountsListIcon,
-                      width: 11,
-                      height: 6,
+                      assetName: Assets.icon.accountsList,
+                      width: 25,
+                      height: 25,
                     ),
                   ],
                 ),
                 CustomSvgIcon(
-                  assetName: Assets.menuIcon,
+                  assetName: Assets.icon.menu,
                   width: 21,
                   height: 18,
                 ),
@@ -80,7 +81,7 @@ class InstagramProfile extends StatelessWidget {
                       color: Colors.white,
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: AssetImage(Assets.postUserImage),
+                        image: AssetImage(Assets.images.postuserimage.path),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -162,7 +163,7 @@ class InstagramProfile extends StatelessWidget {
                     height: 25,
                     width: 25,
                     child: CustomSvgIcon(
-                        assetName: Assets.addIcon, width: 25, height: 25),
+                        assetName: Assets.icon.add, width: 25, height: 25),
                   ),
                 ),
                 SizedBox(
