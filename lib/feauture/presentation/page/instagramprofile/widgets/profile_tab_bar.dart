@@ -85,9 +85,10 @@ class ProfileTabBar extends StatelessWidget {
             ),
             Expanded(
               child: TabBarView(
-                physics: FixedExtentScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
