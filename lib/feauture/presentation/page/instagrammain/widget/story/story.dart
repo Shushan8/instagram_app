@@ -15,66 +15,66 @@ class Story extends StatelessWidget {
       Assets.images.storyimage3.path,
       Assets.images.storyimage4.path,
     ];
+    final List<String> textStory = [
+      'Your Story',
+      'karennne',
+      'zackjohn',
+      'kieron_d',
+      'craig_love',
+    ];
     return Container(
       width: double.infinity,
-      height: 100,
+      height: 98,
       decoration: BoxDecoration(
-          border: Border.all(
-              width: 0.1, color: const Color.fromARGB(255, 120, 119, 119))),
+        border: Border.all(
+          width: 0.33,
+          color: const Color(0xff3C3C43),
+        ),
+      ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
             SizedBox(
-              width: 400,
-              height: 100,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: imagePaths.length,
-                itemBuilder: (context, index) {
-                  return Stack(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Container(
-                        width: 80,
-                        height: 90,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xffFBAA47),
-                              Color(0xffD91A46),
-                              Color(0xffA60F93),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Container(
-                            width: 60,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white, width: 3),
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  imagePaths[index],
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                child: ListView.separated(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: imagePaths.length,
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    StoryWidget(
+                      width: 70,
+                      height: 65,
+                      image: imagePaths[index],
+                      gradient: true,
                     ),
-                  ]);
-// >>>>>>> 8f454cbd6793236b87bfc43c07d32377f8979ecd
-                },
-              ),
-            ),
+                    Text(textStory[index]),
+                  ],
+                );
+              },
+            )
+                //  ListView.builder(
+                //   scrollDirection: Axis.horizontal,
+                //   itemCount: imagePaths.length,
+                //   itemBuilder: (context, index) {
+                //     return Column(
+                //       children: [
+                //         StoryWidget(
+                //           width: 80,
+                //           height: 70,
+                //           image: imagePaths[index],
+                //           gradient: true,
+
+                //         ),
+                //         Text('data'),
+                //       ],
+                //     );
+                //   },
+                // ),
+                ),
           ],
         ),
       ),

@@ -81,12 +81,39 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: sf-pro
+      fonts:
+        - asset: assets/fonts/SFProText-Bold.ttf
+        - asset: assets/fonts/SFProText-BoldItalic.ttf
+        - asset: assets/fonts/SFProText-Heavy.ttf
+        - asset: assets/fonts/SFProText-HeavyItalic.ttf
+        - asset: assets/fonts/SFProText-Light.ttf
+        - asset: assets/fonts/SFProText-LightItalic.ttf
+        - asset: assets/fonts/SFProText-Medium.ttf
+        - asset: assets/fonts/SFProText-MediumItalic.ttf
+        - asset: assets/fonts/SFProText-Regular.ttf
+        - asset: assets/fonts/SFProText-RegularItalic.ttf
+        - asset: assets/fonts/SFProText-RegularItalic.ttf
+        - asset: assets/fonts/SFProText-SemiboldItalic.ttf
+          style: italic
   # fonts:
-  #   - family: Schyler
+  #   - family: sf-pro
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  #       - asset: assets/fonts/SFProText-Bold.ttf
+  #       - asset: assets/fonts/SFProText-BoldItalic.ttf
+  #       - asset: assets/fonts/SFProText-Heavy.ttf
+  #       - asset: assets/fonts/SFProText-HeavyItalic.ttf
+  #       - asset: assets/fonts/SFProText-Light.ttf
+  #       - asset: assets/fonts/SFProText-LightItalic.ttf
+  #       - asset: assets/fonts/SFProText-Medium.ttf
+  #       - asset: assets/fonts/SFProText-MediumItalic.ttf
+  #       - asset: assets/fonts/SFProText-Regular.ttf
+  #       - asset: assets/fonts/SFProText-RegularItalic.ttf
+  #       - asset: assets/fonts/SFProText-RegularItalic.ttf
+  #       - asset: assets/fonts/SFProText-SemiboldItalic.ttf
+
+          # style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

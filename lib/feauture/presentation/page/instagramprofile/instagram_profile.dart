@@ -174,6 +174,8 @@ class InstagramProfile extends StatelessWidget {
                     itemCount: imagePaths.length,
                     itemBuilder: (context, index) {
                       return StoryWidget(
+                        width: 60,
+                        height: 60,
                           image: imagePaths[index], gradient: true);
                     },
                   ),

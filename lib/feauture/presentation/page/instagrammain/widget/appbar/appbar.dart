@@ -8,9 +8,8 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      width: double.infinity,
+    return Container(
+      margin: EdgeInsets.only(top: 30),
       child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -18,21 +17,22 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomSvgIcon(
-                assetName: Assets.icon.add,
-                width: 25,
-                height: 25,
+                assetName: Assets.icon.camera,
+                width: 24,
+                height: 22,
               ),
               Image.asset(
                 Assets.images.instagramLogo.path,
+                width: 105,
+                height: 28,
               ),
               Row(
                 children: [
                   CustomSvgIcon(
                     assetName: Assets.icon.tv,
-                    width: 25,
+                    width: 24,
                     height: 25,
                   ),
                   SizedBox(
@@ -40,8 +40,8 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   CustomSvgIcon(
                     assetName: Assets.icon.send,
-                    width: 25,
-                    height: 25,
+                    width: 23,
+                    height: 20,
                   ),
                 ],
               ),
@@ -52,7 +52,6 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(60);
+    @override
+    Size get preferredSize => Size.fromHeight(50);
 }

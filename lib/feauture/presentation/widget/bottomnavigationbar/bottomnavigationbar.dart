@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/instagram_profile.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
@@ -95,13 +96,18 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: UserPhotoCircle(
-              height: 25,
-              width: 25,
-              assetsImage: AssetImage(
-                Assets.images.postuserimage.path,
-              ),
-            ),
+            icon:StoryWidget(
+              image: Assets.images.postuserimage.path, 
+            gradient: false, 
+            width: 25, 
+            height: 25)
+           , //  UserPhotoCircle(
+            //   height: 25,
+            //   width: 25,
+            //   assetsImage: AssetImage(
+            //     Assets.images.postuserimage.path,
+            //   ),
+            // ),
             label: '',
           ),
         ],

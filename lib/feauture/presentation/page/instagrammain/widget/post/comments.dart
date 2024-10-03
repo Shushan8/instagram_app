@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Comments extends StatelessWidget {
@@ -18,17 +19,21 @@ class Comments extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 10),
             child: Row(
               children: [
-                UserPhotoCircle(
-                  height: 20,
-                  width: 20,
-                  assetsImage: AssetImage(
-                    Assets.images.storyimage4.path,
-                  ),
-                  //  AssetImage(
-                  //   Assets.images.storyimage4 as String
-                  // Assets.storyImage4,
-                  // ),
-                ),
+                StoryWidget(
+                  image: Assets.images.storyimage4.path,
+                   gradient: false,
+                    width: 20, height: 20),
+                // UserPhotoCircle(
+                //   height: 20,
+                //   width: 20,
+                //   assetsImage: AssetImage(
+                //     Assets.images.storyimage4.path,
+                //   ),
+                //   //  AssetImage(
+                //   //   Assets.images.storyimage4 as String
+                //   // Assets.storyImage4,
+                //   // ),
+                // ),
                 SizedBox(
                   width: 5,
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class UserPost extends StatelessWidget {
@@ -11,24 +12,17 @@ class UserPost extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5.5, vertical: 8),
           child: Row(
             children: [
-              UserPhotoCircle(
-                height: 35,
-                width: 35,
-                assetsImage:
-                AssetImage(
-                Assets.images.postuserimage.path,
-              ),
-                // Image.asset(Assets.images.postuserimage.path)
-                //  AssetImage(
-                //   ,
-                // ),
-              ),
+              StoryWidget(
+                  image: Assets.images.postuserimage.path,
+                  gradient: false,
+                  width: 50,
+                  height: 40),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -51,7 +45,7 @@ class UserPost extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      children: [
+                      children:const [
                         Text(
                           'Armenia,Erevan',
                         ),
@@ -65,7 +59,7 @@ class UserPost extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {},
-          icon:  CustomSvgIcon(
+          icon: CustomSvgIcon(
             assetName: Assets.icon.more,
             width: 3,
             height: 5,
