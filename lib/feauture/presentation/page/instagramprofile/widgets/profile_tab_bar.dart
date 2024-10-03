@@ -7,43 +7,109 @@ class ProfileTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> imagePaths = [
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage.path,
+      Assets.images.storyimage1.path,
+      Assets.images.storyimage2.path,
+      Assets.images.storyimage3.path,
+      Assets.images.storyimage4.path,
+      Assets.images.storyimage.path,
+    ];
+
+    double height =
+        ((imagePaths.length / 3) * 124) + 32 * (imagePaths.length / 3) + 20;
+
     return DefaultTabController(
-      initialIndex: 1,
       length: 2,
-      child: SingleChildScrollView(
-        child: SizedBox(
-          height: 200,
-          child: Scaffold(
-            appBar: AppBar(
-              toolbarHeight: 0,
-              bottom: TabBar(indicatorColor: Colors.black, tabs: <Widget>[
-                SizedBox(
-                  width: double.infinity / 2,
-                  child: Tab(
-                    icon: CustomSvgIcon(
-                      assetName: Assets.icon.gridIcon,
-                      width: 23,
-                      height: 23,
+      child: SizedBox(
+        width: double.infinity,
+        height: height,
+        //  (imagePaths.length / 3) * 124,
+        child: Column(
+          children: [
+            Container(
+              child: TabBar(
+                tabs: [
+                  SizedBox(
+                    width: double.infinity / 2,
+                    child: Tab(
+                      icon: CustomSvgIcon(
+                        assetName: Assets.icon.gridIcon,
+                        width: 23,
+                        height: 23,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: double.infinity / 2,
-                  child: Tab(
-                    icon: CustomSvgIcon(
-                      assetName: Assets.icon.tagsIcon,
-                      width: 23,
-                      height: 23,
+                  SizedBox(
+                    width: double.infinity / 2,
+                    child: Tab(
+                      icon: CustomSvgIcon(
+                        assetName: Assets.icon.tagsIcon,
+                        width: 23,
+                        height: 23,
+                      ),
                     ),
                   ),
-                ),
-              ]),
+                ],
+              ),
             ),
-            body: TabBarView(children: const <Widget>[
-              Text('data'),
-              Text('2455'),
-            ]),
-          ),
+            Expanded(
+              child: TabBarView(
+                physics: FixedExtentScrollPhysics(),
+                children: [
+                  GridView.builder(
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 8,
+                        crossAxisSpacing: 8,
+                      ),
+                      itemCount: imagePaths.length,
+                      itemBuilder: (context, index) {
+                        return SizedBox(
+                          child: Image.asset(
+                            width: 124,
+                            height: 124,
+                            imagePaths[index],
+                            fit: BoxFit.contain,
+                          ),
+                        );
+                      }),
+                  Text('2455'),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

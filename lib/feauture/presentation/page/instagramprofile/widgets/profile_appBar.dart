@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/bold_text.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class ProfileAppbar extends StatelessWidget {
@@ -9,7 +9,7 @@ class ProfileAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SizedBox(),
         Row(
@@ -23,7 +23,10 @@ class ProfileAppbar extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            const BoldText(text: 'Jacob_w'),
+            Text(
+              'Jacob_w',
+              style: AppTypography.boldText16,
+            ),
             const SizedBox(
               width: 5,
             ),
