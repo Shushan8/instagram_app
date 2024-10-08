@@ -57,6 +57,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/more.svg
   String get more => 'assets/icon/more.svg';
 
+  /// File path: assets/icon/moreb.svg
+  String get moreb => 'assets/icon/moreb.svg';
+
   /// File path: assets/icon/official.svg
   String get official => 'assets/icon/official.svg';
 
@@ -92,6 +95,7 @@ class $AssetsIconGen {
         like,
         likenavigator,
         more,
+        moreb,
         official,
         save,
         search,

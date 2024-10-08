@@ -21,7 +21,7 @@ class ProfileHistorys extends StatelessWidget {
         children: [
           SizedBox(
             height: 100,
-            width: 320,
+            width: MediaQuery.sizeOf(context).width - 14,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: imagePaths.length,
@@ -39,7 +39,16 @@ class ProfileHistorys extends StatelessWidget {
                             width: 10,
                             height: 10),
                       )
-                    : StoryWidget(image: imagePaths[index], gradient: true);
+                    : Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 18),
+                        child: StoryWidget(
+                          image: imagePaths[index], 
+                          gradient: true, 
+                          width: 64, 
+                          height: 64, padin: 2.5,widthcont: 2,),
+                      ),
+                    );
               },
             ),
           ),

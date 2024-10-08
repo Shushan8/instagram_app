@@ -13,6 +13,7 @@ class Story extends StatelessWidget {
       Assets.images.storyimage2.path,
       Assets.images.storyimage3.path,
       Assets.images.storyimage4.path,
+      Assets.images.storyimage1.path,
     ];
     final List<String> textStory = [
       'Your Story',
@@ -20,15 +21,16 @@ class Story extends StatelessWidget {
       'zackjohn',
       'kieron_d',
       'craig_love',
+      'zackjohn',
     ];
     return Container(
+      padding: EdgeInsets.only(top: 9 , bottom: 4 ,left: 10),
       width: double.infinity,
-      height: 98,
+      height: 110,
       decoration: BoxDecoration(
-        border: Border.all(
-          width: 0.33,
-          color: const Color(0xff3C3C43),
-        ),
+        border: Border(
+            top: BorderSide(color: Color(0xff3C3C43), width: 0.33),
+            bottom: BorderSide(color: Color(0xff3C3C43), width: 0.33)),
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -36,19 +38,21 @@ class Story extends StatelessWidget {
           children: [
             SizedBox(
                 child: ListView.separated(
-              shrinkWrap: true,
+              shrinkWrap: true, 
+              
               scrollDirection: Axis.horizontal,
               itemCount: imagePaths.length,
               separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
+                  const Divider(endIndent: 15,),
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
                     StoryWidget(
                       width: 70,
-                      height: 65,
+                      height: 69,
                       image: imagePaths[index],
                       gradient: true,
+                       padin: 2.5,widthcont: 2,
                     ),
                     Text(textStory[index]),
                   ],

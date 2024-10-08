@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/instagram_profile.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
@@ -52,10 +51,12 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
@@ -97,17 +98,10 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
           ),
           BottomNavigationBarItem(
             icon:StoryWidget(
-              image: Assets.images.postuserimage.path, 
+              image: Assets.images.storyimage.path, 
             gradient: false, 
             width: 25, 
-            height: 25)
-           , //  UserPhotoCircle(
-            //   height: 25,
-            //   width: 25,
-            //   assetsImage: AssetImage(
-            //     Assets.images.postuserimage.path,
-            //   ),
-            // ),
+            height: 30,  padin: 0,widthcont: 0,),
             label: '',
           ),
         ],

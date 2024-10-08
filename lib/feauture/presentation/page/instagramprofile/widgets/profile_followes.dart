@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/bold_text.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class ProfileFollowes extends StatelessWidget {
@@ -24,8 +24,11 @@ class ProfileFollowes extends StatelessWidget {
           ),
         ),
         Column(
-          children: const [
-            BoldText(text: '54'),
+          children: [
+            Text(
+              '54',
+              style: AppTypography.boldText16,
+            ),
             Text(
               'Posts',
               style: TextStyle(fontSize: 13),
@@ -33,8 +36,11 @@ class ProfileFollowes extends StatelessWidget {
           ],
         ),
         Column(
-          children: const [
-            BoldText(text: '834'),
+          children: [
+            Text(
+              '834',
+              style: AppTypography.boldText16,
+            ),
             Text(
               'Folowers',
               style: TextStyle(fontSize: 13),
@@ -42,8 +48,11 @@ class ProfileFollowes extends StatelessWidget {
           ],
         ),
         Column(
-          children: const [
-            BoldText(text: '162'),
+          children: [
+            Text(
+              '162',
+              style: AppTypography.boldText16,
+            ),
             Text(
               'Folowing',
               style: TextStyle(fontSize: 13),

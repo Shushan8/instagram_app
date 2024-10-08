@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/bold_text.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 
 class UserContacts extends StatelessWidget {
   const UserContacts({super.key});
@@ -8,11 +8,14 @@ class UserContacts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            BoldText(text: 'Jacob West'),
+            Text(
+              'Jacob West',
+              style: AppTypography.boldText16,
+            ),
             Text(
               'Digital goodies designer @pixsellz',
               style: TextStyle(fontSize: 13),

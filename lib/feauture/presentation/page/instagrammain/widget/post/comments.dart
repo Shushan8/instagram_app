@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
@@ -12,28 +11,18 @@ class Comments extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: [
-          const SizedBox(
-            width: 15,
-          ),
+          // const SizedBox(
+          //   width: 5,
+          // ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.only(bottom: 5),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 StoryWidget(
                   image: Assets.images.storyimage4.path,
                    gradient: false,
-                    width: 20, height: 20),
-                // UserPhotoCircle(
-                //   height: 20,
-                //   width: 20,
-                //   assetsImage: AssetImage(
-                //     Assets.images.storyimage4.path,
-                //   ),
-                //   //  AssetImage(
-                //   //   Assets.images.storyimage4 as String
-                //   // Assets.storyImage4,
-                //   // ),
-                // ),
+                    width: 20, height: 30, padin: 0,widthcont: 0,),
                 SizedBox(
                   width: 5,
                 ),
@@ -61,18 +50,21 @@ class Comments extends StatelessWidget {
               ],
             ),
           ),
-          RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                text: 'joshua_l ',
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-              ),
-              TextSpan(
-                  text:
-                      'The game in Japan was amazing and I want to share some photos',
-                  style: TextStyle(color: Colors.black)),
-            ]),
+          Padding(
+            padding: const EdgeInsets.only(left: 5),
+            child: RichText(
+              text: const TextSpan(children: [
+                TextSpan(
+                  text: 'joshua_l ',
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                ),
+                TextSpan(
+                    text:
+                        'The game in Japan was amazing and I want to share some photos',
+                    style: TextStyle(color: Colors.black, height: 1.5)),
+              ]),
+            ),
           ),
         ],
       ),

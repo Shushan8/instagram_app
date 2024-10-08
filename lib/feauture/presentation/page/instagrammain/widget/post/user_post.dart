@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_photo_circle.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
@@ -19,10 +18,10 @@ class UserPost extends StatelessWidget {
               StoryWidget(
                   image: Assets.images.postuserimage.path,
                   gradient: false,
-                  width: 50,
-                  height: 40),
+                  width: 30,
+                  height: 40, padin: 0,widthcont: 0,),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
