@@ -15,6 +15,14 @@ class Post extends StatefulWidget {
 class _PostState extends State<Post> {
   bool isLiked = false;
   bool isSaved = false;
+
+  int activePage = 0;
+  final List<String> imagePaths = [
+    Assets.images.postimage.path,
+    Assets.images.postuserimage.path,
+    Assets.images.rectangle2.path,
+  ];
+
   void liked() {
     setState(() {
       isLiked = !isLiked;
@@ -34,42 +42,52 @@ class _PostState extends State<Post> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const UserPost(),
-        Stack(children: [
-          SizedBox(
-            width: double.infinity,
-            height: 375,
-            child: Image.asset(
-              Assets.images.postimage.path,
-              fit: BoxFit.cover,
+        Stack(
+          children: [
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width,
+              height: 375,
+              child: PageView.builder(
+                  padEnds: false,
+                  itemCount: imagePaths.length,
+                  onPageChanged: (page) {
+                    setState(() => activePage = page);
+                  },
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 1),
+                      child: slider(imagePaths, index),
+                    );
+                  }),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                margin: EdgeInsets.all(14),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 6,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(14),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                      color: AppColors.black12,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Text(
+                    '${activePage + 1}/ ${imagePaths.length}',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                    color: AppColors.black12,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Text(
-                  '1/3',
-                  style: TextStyle(color: Colors.white),
-                ),
-              )
-            ],
-          )
-        ]),
+              ],
+            )
+          ],
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Row(
-            
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(mainAxisAlignment: MainAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
                     onPressed: liked,
@@ -82,7 +100,6 @@ class _PostState extends State<Post> {
                           )
                         : CustomSvgIcon(
                             assetName: Assets.icon.like,
-                            // Assets.likeIcon,
                             width: 25,
                             height: 25,
                           ),
@@ -94,7 +111,6 @@ class _PostState extends State<Post> {
                       width: 25,
                       height: 25,
                     ),
-                    
                   ),
                   IconButton(
                     onPressed: () {},
@@ -106,29 +122,31 @@ class _PostState extends State<Post> {
                   ),
                 ],
               ),
-              CustomSvgIcon(
-                assetName: Assets.icon.moreb,
-                width: 25,
-                height: 25,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: imageIndicator(imagePaths.length, activePage),
+                ),
               ),
-               SizedBox(
-                    width: 15,
-                  ),
+              SizedBox(
+                width: 15,
+              ),
               Row(
                 children: [
                   IconButton(
-                      onPressed: onSaved,
-                      icon: isSaved
-                          ? Icon(
-                              Icons.turned_in,
-                              size: 29,
-                            )
-                          : CustomSvgIcon(
-                              assetName: Assets.icon.save,
-                              width: 25,
-                              height: 25,
-                            )),
-                 
+                    onPressed: onSaved,
+                    icon: isSaved
+                        ? Icon(
+                            Icons.turned_in,
+                            size: 29,
+                          )
+                        : CustomSvgIcon(
+                            assetName: Assets.icon.save,
+                            width: 25,
+                            height: 25,
+                          ),
+                  ),
                 ],
               ),
             ],
@@ -141,4 +159,28 @@ class _PostState extends State<Post> {
       ],
     );
   }
+}
+
+SizedBox slider(images, index) {
+  return SizedBox(
+    height: 375,
+    child: Image.asset(
+      images[index],
+      fit: BoxFit.cover,
+    ),
+  );
+}
+
+List<Widget> imageIndicator(imagesLength, currentIndex) {
+  return List<Widget>.generate(imagesLength, (index) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 2),
+      width: 5,
+      height: 5,
+      decoration: BoxDecoration(
+        color: currentIndex == index ? Colors.teal.shade400 : Colors.black26,
+        shape: BoxShape.circle,
+      ),
+    );
+  });
 }

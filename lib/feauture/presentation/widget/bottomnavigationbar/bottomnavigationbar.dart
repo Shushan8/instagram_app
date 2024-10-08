@@ -51,12 +51,10 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
@@ -97,11 +95,14 @@ class _BottomNavigationBarState extends State<BottomNavigationBarExample> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon:StoryWidget(
-              image: Assets.images.storyimage.path, 
-            gradient: false, 
-            width: 25, 
-            height: 30,  padin: 0,widthcont: 0,),
+            icon: StoryWidget(
+              image: Assets.images.storyimage.path,
+              gradient: false,
+              width: 25,
+              height: 30,
+              padin: 0,
+              widthcont: 0,
+            ),
             label: '',
           ),
         ],
