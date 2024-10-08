@@ -112,6 +112,42 @@ class $AssetsImagesGen {
   AssetGenImage get instagramLogo =>
       const AssetGenImage('assets/images/Instagram Logo.png');
 
+  /// File path: assets/images/Rectangle.png
+  AssetGenImage get rectangle =>
+      const AssetGenImage('assets/images/Rectangle.png');
+
+  /// File path: assets/images/Rectangle1.png
+  AssetGenImage get rectangle1 =>
+      const AssetGenImage('assets/images/Rectangle1.png');
+
+  /// File path: assets/images/Rectangle2.png
+  AssetGenImage get rectangle2 =>
+      const AssetGenImage('assets/images/Rectangle2.png');
+
+  /// File path: assets/images/Rectangle3.png
+  AssetGenImage get rectangle3 =>
+      const AssetGenImage('assets/images/Rectangle3.png');
+
+  /// File path: assets/images/Rectangle5.png
+  AssetGenImage get rectangle5 =>
+      const AssetGenImage('assets/images/Rectangle5.png');
+
+  /// File path: assets/images/Rectangle6.png
+  AssetGenImage get rectangle6 =>
+      const AssetGenImage('assets/images/Rectangle6.png');
+
+  /// File path: assets/images/Rectangle7.png
+  AssetGenImage get rectangle7 =>
+      const AssetGenImage('assets/images/Rectangle7.png');
+
+  /// File path: assets/images/Rectangle8.png
+  AssetGenImage get rectangle8 =>
+      const AssetGenImage('assets/images/Rectangle8.png');
+
+  /// File path: assets/images/Video_Post.png
+  AssetGenImage get videoPost =>
+      const AssetGenImage('assets/images/Video_Post.png');
+
   /// File path: assets/images/postimage.png
   AssetGenImage get postimage =>
       const AssetGenImage('assets/images/postimage.png');
@@ -143,6 +179,15 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         instagramLogo,
+        rectangle,
+        rectangle1,
+        rectangle2,
+        rectangle3,
+        rectangle5,
+        rectangle6,
+        rectangle7,
+        rectangle8,
+        videoPost,
         postimage,
         postuserimage,
         storyimage,
