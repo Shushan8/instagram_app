@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
@@ -54,29 +55,12 @@ class Story extends StatelessWidget {
                       gradient: true,
                        padin: 2.5,widthcont: 2,
                     ),
-                    Text(textStory[index]),
+                    Text(textStory[index], style: AppTypography.bText12,),
                   ],
                 );
               },
             )
-                //  ListView.builder(
-                //   scrollDirection: Axis.horizontal,
-                //   itemCount: imagePaths.length,
-                //   itemBuilder: (context, index) {
-                //     return Column(
-                //       children: [
-                //         StoryWidget(
-                //           width: 80,
-                //           height: 70,
-                //           image: imagePaths[index],
-                //           gradient: true,
-
-                //         ),
-                //         Text('data'),
-                //       ],
-                //     );
-                //   },
-                // ),
+               
                 ),
           ],
         ),

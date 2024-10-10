@@ -56,13 +56,7 @@ class _PostState extends State<Post> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 1),
-                      child: SizedBox(
-                        height: 375,
-                        child: Image.asset(
-                          imagePaths[index],
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                      child: slider(imagePaths, index),
                     );
                   }),
             ),
@@ -132,20 +126,7 @@ class _PostState extends State<Post> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: List<Widget>.generate(imagePaths.length, (index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 2),
-                      width: 5,
-                      height: 5,
-                      decoration: BoxDecoration(
-                        color: activePage == index
-                            ? Colors.teal.shade400
-                            : Colors.black26,
-                        shape: BoxShape.circle,
-                      ),
-                    );
-                  }),
+                  children: imageIndicator(imagePaths.length, activePage),
                 ),
               ),
               SizedBox(
@@ -171,8 +152,35 @@ class _PostState extends State<Post> {
             ],
           ),
         ),
+        // const SizedBox(
+        //   height: 15,
+        // ),
         const Comments(),
       ],
     );
   }
+}
+
+SizedBox slider(images, index) {
+  return SizedBox(
+    height: 375,
+    child: Image.asset(
+      images[index],
+      fit: BoxFit.cover,
+    ),
+  );
+}
+
+List<Widget> imageIndicator(imagesLength, currentIndex) {
+  return List<Widget>.generate(imagesLength, (index) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 2),
+      width: 5,
+      height: 5,
+      decoration: BoxDecoration(
+        color: currentIndex == index ? Colors.teal.shade400 : Colors.black26,
+        shape: BoxShape.circle,
+      ),
+    );
+  });
 }

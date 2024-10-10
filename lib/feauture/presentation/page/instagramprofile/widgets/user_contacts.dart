@@ -9,22 +9,30 @@ class UserContacts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Jacob West',
-              style: AppTypography.boldText16,
-            ),
-            Text(
-              'Digital goodies designer @pixsellz',
-              style: TextStyle(fontSize: 13),
-            ),
-            Text(
-              'Everything is designed.',
-              style: TextStyle(fontSize: 13),
-            ),
-          ],
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          'Jacob West',
+          style: AppTypography.boldText12,
+        ),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'Digital goodies designer ',
+                style: AppTypography.bText12,
+              ),
+              TextSpan(
+                text: '@pixsellz',
+                style: AppTypography.bText12k,
+              ),
+            ],
+          ),
+        ),
+        Text(
+          'Everything is designed.',
+          style: AppTypography.bText13,
         ),
       ],
     );

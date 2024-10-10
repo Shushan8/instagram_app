@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
@@ -29,9 +30,7 @@ class UserPost extends StatelessWidget {
                       children: [
                         Text(
                           'joshua_l',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: AppTypography.boldText13
                         ),
                         SizedBox(
                           width: 5,
@@ -44,9 +43,10 @@ class UserPost extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      children:const [
+                      children: [
                         Text(
                           'Armenia,Erevan',
+                          style: AppTypography.bText11,
                         ),
                       ],
                     ),

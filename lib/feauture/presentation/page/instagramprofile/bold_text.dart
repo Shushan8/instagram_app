@@ -10,6 +10,7 @@ class BoldText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
+        
         fontWeight: FontWeight.bold,
         fontSize: 16,
         color: AppColors.black26,
