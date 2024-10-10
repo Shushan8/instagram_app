@@ -56,7 +56,7 @@ class LogIn extends StatelessWidget {
                       child: ElevatedButton(
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           backgroundColor: Colors.blue,
                         ),
@@ -69,7 +69,10 @@ class LogIn extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text('Switch accounts'),
+                  Text(
+                    'Switch accounts',
+                    style: AppTypography.boldText14,
+                  ),
                 ],
               ),
             ),
