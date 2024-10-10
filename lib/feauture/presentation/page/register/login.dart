@@ -71,8 +71,8 @@ class LogIn extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-          child:   Row(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -80,21 +80,20 @@ class LogIn extends StatelessWidget {
                       style: AppTypography.bText12,
                     ),
                     InkWell(
-                      onTap: (){
-                         Navigator.of(context).push(MaterialPageRoute(builder:(context) {
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
                             return SignUp();
-                          },));
+                          },
+                        ));
                       },
                       child: Text(
                         'Sign up.',
                         style: AppTypography.boldText12,
                       ),
                     )
-                   
                   ],
-                )
-            ),
-          
+                )),
           ],
         ),
       ),

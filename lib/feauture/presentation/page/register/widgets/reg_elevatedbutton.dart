@@ -25,13 +25,7 @@ class RegElevatedbutton extends StatelessWidget {
         backgroundColor: backColor,
        ),
        onPressed: navFunctoun,
-      //() {
-        // Navigator.of(context).push(MaterialPageRoute(
-        //   builder: (context) {
-        //     return LoginScreen();
-        //   },
-        // ));
-      // },
+
       child: Text(
         buttonText,
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

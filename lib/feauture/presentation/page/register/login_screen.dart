@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/appbar/appbar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_textfiled.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/sign_up.dart';
@@ -77,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children:const [
                     Text('OR'),
                   ],
                 ),

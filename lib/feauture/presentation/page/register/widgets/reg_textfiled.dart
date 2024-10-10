@@ -7,7 +7,6 @@ class RegTextfiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      // controller: ,
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(

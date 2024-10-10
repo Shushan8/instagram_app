@@ -3,7 +3,6 @@ import 'package:instagram_test_app/feauture/presentation/page/register/login_scr
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
-import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_textfiled.dart';
@@ -37,7 +36,7 @@ class SignUp extends StatelessWidget {
                 backColor: AppColors.blue37),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Text('OR'),
               ],
             ),
@@ -119,32 +118,7 @@ class SignUp extends StatelessWidget {
                     },
                     buttonText: 'Sign up',
                     backColor: AppColors.blue37),
-                // SizedBox(
-                //   height: 37,
-                // ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     CustomSvgIcon(
-                //         assetName: Assets.icon.facebookk,
-                //         width: 17,
-                //         height: 17),
-                //     SizedBox(
-                //       width: 10,
-                //     ),
-                //     Text(
-                //       'Log in with Facebook',
-                //       style: AppTypography.boldText14,
-                //     ),
-                //   ],
-                // ),
-                // SizedBox(
-                //   height: 41,
-                // ),
 
-                // SizedBox(
-                //   height: 41,
-                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
