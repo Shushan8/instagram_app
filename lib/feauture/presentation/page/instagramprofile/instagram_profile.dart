@@ -6,7 +6,6 @@ import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/w
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_histories.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_tab_bar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/user_contacts.dart';
-import 'package:instagram_test_app/feauture/presentation/page/profail_menu/profail_menu.dart';
 
 class InstagramProfile extends StatelessWidget {
   const InstagramProfile({super.key});

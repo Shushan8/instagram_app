@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/login_screen.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_elevatedbutton.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class LogIn extends StatelessWidget {
@@ -50,23 +54,16 @@ class LogIn extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(32, 12, 32, 30),
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width,
-                      padding: const EdgeInsets.only(top: 10),
-                      child: ElevatedButton(
-                        style: OutlinedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          backgroundColor: Colors.blue,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'Log in',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                    child: RegElevatedbutton(
+                      navFunctoun: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
+                        ));
+                      },
+                      backColor: AppColors.blue37,
+                      buttonText: 'Log in',
                     ),
                   ),
                   Text(
@@ -77,22 +74,29 @@ class LogIn extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: RichText(
-                text: const TextSpan(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextSpan(
-                        text: 'Don’t have an account? ',
-                        style: TextStyle(color: Colors.black)),
-                    TextSpan(
-                      text: 'Sign up.',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
+                    Text(
+                      'Don’t have an account? ',
+                      style: AppTypography.bText12,
                     ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
+                            return SignUp();
+                          },
+                        ));
+                      },
+                      child: Text(
+                        'Sign up.',
+                        style: AppTypography.boldText12,
+                      ),
+                    )
                   ],
-                ),
-              ),
-            ),
+                )),
           ],
         ),
       ),
