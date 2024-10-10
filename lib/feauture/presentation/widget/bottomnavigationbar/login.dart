@@ -13,75 +13,81 @@ class LogIn extends StatelessWidget {
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
               height: 50,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 49,
-                  width: 182,
-                  child: Image.asset(
-                    Assets.images.instagramLogo.path,
-                    fit: BoxFit.cover,
+            SizedBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 49,
+                    width: 182,
+                    child: Image.asset(
+                      Assets.images.instagramLogo.path,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 52),
-                  child: StoryWidget(
-                    image: Assets.images.storyimage4.path,
-                    gradient: false,
-                    width: 85,
-                    height: 85,
-                    padin: 0,
-                    widthcont: 0,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 52),
+                    child: StoryWidget(
+                      image: Assets.images.storyimage4.path,
+                      gradient: false,
+                      width: 85,
+                      height: 85,
+                      padin: 0,
+                      widthcont: 0,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Jacob_w',
-                  style: AppTypography.boldText16,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(32.0),
-                  child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    padding: const EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                  SizedBox(
+                    height: 13,
+                  ),
+                  Text(
+                    'Jacob_w',
+                    style: AppTypography.boldText16,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(32, 12, 32, 30),
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      padding: const EdgeInsets.only(top: 10),
+                      child: ElevatedButton(
+                        style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          backgroundColor: Colors.blue,
                         ),
-                        backgroundColor: Colors.blue,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        'Edit Profile',
-                        style: AppTypography.boldText16,
+                        onPressed: () {},
+                        child: Text(
+                          'Log in',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Text('Switch accounts'),
-              ],
-            ),
-            RichText(
-              text: const TextSpan(
-                children: [
-                  TextSpan(
-                      text: 'Don’t have an account? ',
-                      style: TextStyle(color: Colors.black)),
-                  TextSpan(
-                    text: 'Sign up.',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.black),
-                  ),
+                  Text('Switch accounts'),
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: RichText(
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                        text: 'Don’t have an account? ',
+                        style: TextStyle(color: Colors.black)),
+                    TextSpan(
+                      text: 'Sign up.',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
