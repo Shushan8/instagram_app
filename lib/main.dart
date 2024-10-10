@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
-import 'package:instagram_test_app/feauture/presentation/widget/bottomnavigationbar/login.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/login.dart';
 
 void main() {
   runApp(const MyApp());

@@ -27,6 +27,12 @@ abstract final class AppTypography {
     fontSize: 13,
     color: AppColors.blue05,
   );
+  static TextStyle bText12b = TextStyle(
+    fontFamily: FontFamily.sfPro,
+    fontWeight: FontWeight.w500,
+    fontSize: 13,
+    color: AppColors.blue37,
+  );
   static TextStyle bText13 = TextStyle(
     fontFamily: FontFamily.sfPro,
     color: AppColors.black26,

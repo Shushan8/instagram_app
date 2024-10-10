@@ -8,4 +8,10 @@ class AppColors {
   static Color grey3c = Color.fromARGB(74, 60, 60, 67);
   static Color grey3 = Color(0xff00000066);
   static Color blue37 = Color(0xff3797EF);
+  static Color blue37b = Color.fromARGB(255, 136, 196, 252);
+  static Color whitef = Color(0xffFAFAFA);
+  
+
+ 
+
 }

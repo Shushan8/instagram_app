@@ -33,17 +33,35 @@ class $AssetsIconGen {
   /// File path: assets/icon/Video_Icon.svg
   String get videoIcon => 'assets/icon/Video_Icon.svg';
 
+  /// File path: assets/icon/active.svg
+  String get active => 'assets/icon/active.svg';
+
   /// File path: assets/icon/add.svg
   String get add => 'assets/icon/add.svg';
+
+  /// File path: assets/icon/archive.svg
+  String get archive => 'assets/icon/archive.svg';
 
   /// File path: assets/icon/camera.svg
   String get camera => 'assets/icon/camera.svg';
 
+  /// File path: assets/icon/close.svg
+  String get close => 'assets/icon/close.svg';
+
   /// File path: assets/icon/comment.svg
   String get comment => 'assets/icon/comment.svg';
 
+  /// File path: assets/icon/discoverpeople.svg
+  String get discoverpeople => 'assets/icon/discoverpeople.svg';
+
   /// File path: assets/icon/emptyhome.svg
   String get emptyhome => 'assets/icon/emptyhome.svg';
+
+  /// File path: assets/icon/facebook.svg
+  String get facebook => 'assets/icon/facebook.svg';
+
+  /// File path: assets/icon/facebookk.svg
+  String get facebookk => 'assets/icon/facebookk.svg';
 
   /// File path: assets/icon/home.svg
   String get home => 'assets/icon/home.svg';
@@ -60,6 +78,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/moreb.svg
   String get moreb => 'assets/icon/moreb.svg';
 
+  /// File path: assets/icon/nametag.svg
+  String get nametag => 'assets/icon/nametag.svg';
+
   /// File path: assets/icon/official.svg
   String get official => 'assets/icon/official.svg';
 
@@ -75,6 +96,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/send.svg
   String get send => 'assets/icon/send.svg';
 
+  /// File path: assets/icon/setings.svg
+  String get setings => 'assets/icon/setings.svg';
+
   /// File path: assets/icon/tv.svg
   String get tv => 'assets/icon/tv.svg';
 
@@ -87,20 +111,28 @@ class $AssetsIconGen {
         privateIcon,
         tagsIcon,
         videoIcon,
+        active,
         add,
+        archive,
         camera,
+        close,
         comment,
+        discoverpeople,
         emptyhome,
+        facebook,
+        facebookk,
         home,
         like,
         likenavigator,
         more,
         moreb,
+        nametag,
         official,
         save,
         search,
         searchnavigator,
         send,
+        setings,
         tv
       ];
 }
