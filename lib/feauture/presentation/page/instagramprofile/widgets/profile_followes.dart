@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class ProfileFollowes extends StatelessWidget {
@@ -10,18 +11,13 @@ class ProfileFollowes extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          width: 96,
-          height: 96,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 3),
-            color: Colors.white,
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage(Assets.images.postuserimage.path),
-              fit: BoxFit.cover,
-            ),
-          ),
+        StoryWidget(
+          image: Assets.images.storyimage.path,
+          gradient: false,
+          width: 90,
+          height: 90,
+          widthcont: 5,
+          padin: 1,
         ),
         Column(
           children: [
@@ -31,7 +27,7 @@ class ProfileFollowes extends StatelessWidget {
             ),
             Text(
               'Posts',
-              style: TextStyle(fontSize: 13),
+              style: AppTypography.bText13,
             ),
           ],
         ),
@@ -43,7 +39,7 @@ class ProfileFollowes extends StatelessWidget {
             ),
             Text(
               'Folowers',
-              style: TextStyle(fontSize: 13),
+              style: AppTypography.bText13,
             ),
           ],
         ),
@@ -55,7 +51,7 @@ class ProfileFollowes extends StatelessWidget {
             ),
             Text(
               'Folowing',
-              style: TextStyle(fontSize: 13),
+              style: AppTypography.bText13,
             ),
           ],
         ),

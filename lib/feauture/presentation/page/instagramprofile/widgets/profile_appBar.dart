@@ -9,9 +9,9 @@ class ProfileAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(),
+        SizedBox(width: 50,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -21,14 +21,14 @@ class ProfileAppbar extends StatelessWidget {
               height: 12,
             ),
             const SizedBox(
-              width: 5,
+              width:6,
             ),
             Text(
               'Jacob_w',
               style: AppTypography.boldText16,
             ),
             const SizedBox(
-              width: 5,
+              width: 6,
             ),
             CustomSvgIcon(
               assetName: Assets.icon.accountsList,
@@ -36,11 +36,6 @@ class ProfileAppbar extends StatelessWidget {
               height: 6,
             ),
           ],
-        ),
-        CustomSvgIcon(
-          assetName: Assets.icon.menu,
-          width: 21,
-          height: 18,
         ),
       ],
     );

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-// <<<<<<< HEAD
-// import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
-// import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/bold_text.dart';
-// =======
+import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-// >>>>>>> 06073d3ad16b34e95c0e48e64dfdc109cc07f400
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_appBar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_followes.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_histories.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_tab_bar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/user_contacts.dart';
+import 'package:instagram_test_app/feauture/presentation/page/profail_menu/profail_menu.dart';
 
 class InstagramProfile extends StatelessWidget {
   const InstagramProfile({super.key});
@@ -17,45 +14,13 @@ class InstagramProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-// <<<<<<< HEAD
-//       body: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Padding(
-//             padding: const EdgeInsets.symmetric(horizontal: 25),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 SizedBox(
-
-//                   // width: double.infinity,
-//                   // height: 100,
-//                   // child: ListView.builder(
-//                   //   scrollDirection: Axis.horizontal,
-//                   //   itemCount: imagePaths.length,
-//                   //   itemBuilder: (context, index) {
-//                   //     return StoryWidget(
-//                   //       width: 60,
-//                   //       height: 60,
-//                   //         image: imagePaths[index], gradient: true);
-//                   //   },
-
-//                   height: 40,
-//                 ),
-//                 ProfileAppbar(),
-//                 ProfileFollowes(),
-//                 UserContacts(),
-//                 Container(
-//                   width: MediaQuery.sizeOf(context).width,
-//                   padding: const EdgeInsets.only(top: 10),
-//                   child: ElevatedButton(
-//                     style: OutlinedButton.styleFrom(
-//                       shape: RoundedRectangleBorder(
-//                           borderRadius: BorderRadius.circular(10)),
-//                     ),
-//                     onPressed: () {},
-//                     child: BoldText(text: 'Edit Profile'),
-// =======
+      appBar: AppBar(
+        title: ProfileAppbar(),
+       
+        centerTitle: true,
+      ),
+      // endDrawer: ProfailMenu(),
+       
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,9 +31,8 @@ class InstagramProfile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 40,
+                    height: 10,
                   ),
-                  ProfileAppbar(),
                   ProfileFollowes(),
                   UserContacts(),
                   Container(
@@ -76,13 +40,16 @@ class InstagramProfile extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       style: OutlinedButton.styleFrom(
+                        
+                        backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
+                        side: BorderSide(color:  AppColors.grey3c, width: 1,),
                             borderRadius: BorderRadius.circular(10)),
                       ),
                       onPressed: () {},
                       child: Text(
                         'Edit Profile',
-                        style: AppTypography.boldText16,
+                        style: AppTypography.boldText13,
                       ),
                     ),
                   ),
@@ -95,14 +62,9 @@ class InstagramProfile extends StatelessWidget {
                child: ProfileHistorys(),
              ),
             Divider(
-              color: const Color.fromARGB(255, 107, 106, 106),
+              color: AppColors.grey3c,
               height: 0.2,
             ),
-            // ProfileTabBar(),
-            // Padding(
-            //   padding: const EdgeInsets.only(top: 380.0),
-            //   child: MyTabBar(),
-            // ),
             ProfileTabBar()
           ],
         ),

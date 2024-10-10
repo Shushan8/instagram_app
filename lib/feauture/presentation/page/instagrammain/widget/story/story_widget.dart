@@ -42,10 +42,10 @@ class _StoryWidgetState extends State<StoryWidget> {
                   end: Alignment.bottomRight,
                 )
               : LinearGradient(
-                  colors: const [
-                    Color.fromARGB(255, 253, 253, 253),
-                    Color.fromARGB(255, 253, 253, 253),
-                    Color.fromARGB(255, 253, 253, 253),
+                  colors:const  [
+                    Color(0xffC7C7CC),
+                    Color(0xffC7C7CC),
+                    Color(0xffC7C7CC),
                   ], // Градиентные цвета
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
