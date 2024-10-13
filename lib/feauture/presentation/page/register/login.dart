@@ -72,7 +72,10 @@ class _LogInState extends State<LogIn> {
                       buttonText: 'Log in',
                     ),
                   ),
-                  Text('Switch accounts'),
+                  Text(
+                    'Switch accounts',
+                    style: AppTypography.boldText14,
+                  ),
                 ],
               ),
             ),
