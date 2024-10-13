@@ -7,9 +7,15 @@ import 'package:instagram_test_app/feauture/presentation/page/register/widgets/r
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
-class LogIn extends StatelessWidget {
+
+class LogIn extends StatefulWidget {
   const LogIn({super.key});
 
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -7,6 +7,7 @@ import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dar
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_textfiled.dart';
 
+
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
