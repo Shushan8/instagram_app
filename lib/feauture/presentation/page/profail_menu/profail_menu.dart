@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/login.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
+import 'package:instagram_test_app/lc.dart';
+import 'package:instagram_test_app/repo/auth_repo/auth_repo.dart';
 
 class ProfailMenu extends StatelessWidget {
   const ProfailMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Drawer(
       child: ListView(children: <Widget>[
         Column(
@@ -81,13 +83,18 @@ class ProfailMenu extends StatelessWidget {
               title: Text('Open Facebook'),
               onTap: () {},
             ),
-            SizedBox(height: 150,),
+            SizedBox(
+              height: 150,
+            ),
             ListTile(
               title: Text('Sign out'),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-               return   LoginScreen();
-                },));
+                lc<AuthRepo>().signOut();
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()),
+                    (route) => false);
               },
             ),
             ListTile(

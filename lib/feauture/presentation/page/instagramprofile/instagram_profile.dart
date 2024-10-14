@@ -6,6 +6,7 @@ import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/w
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_histories.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_tab_bar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/user_contacts.dart';
+import 'package:instagram_test_app/feauture/presentation/page/profail_menu/profail_menu.dart';
 
 class InstagramProfile extends StatelessWidget {
   const InstagramProfile({super.key});
@@ -15,11 +16,9 @@ class InstagramProfile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: ProfileAppbar(),
-       
         centerTitle: true,
       ),
-      // endDrawer: ProfailMenu(),
-       
+      endDrawer: ProfailMenu(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,10 +38,12 @@ class InstagramProfile extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       style: OutlinedButton.styleFrom(
-                        
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
-                        side: BorderSide(color:  AppColors.grey3c, width: 1,),
+                            side: BorderSide(
+                              color: AppColors.grey3c,
+                              width: 1,
+                            ),
                             borderRadius: BorderRadius.circular(10)),
                       ),
                       onPressed: () {},
@@ -52,14 +53,13 @@ class InstagramProfile extends StatelessWidget {
                       ),
                     ),
                   ),
-                 
                 ],
               ),
             ),
-             Padding(
-               padding: const EdgeInsets.only(left: 14),
-               child: ProfileHistorys(),
-             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: ProfileHistorys(),
+            ),
             Divider(
               color: AppColors.grey3c,
               height: 0.2,

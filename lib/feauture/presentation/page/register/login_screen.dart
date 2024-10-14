@@ -7,7 +7,7 @@ import 'package:instagram_test_app/feauture/presentation/page/register/widgets/r
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_textfiled.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
-@RoutePage()
+// @RoutePage()
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children:const [
+                  children: const [
                     Text('OR'),
                   ],
                 ),
@@ -93,18 +93,19 @@ class LoginScreen extends StatelessWidget {
                       style: AppTypography.bText12,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // context.pushRoute(SignUp() as PageRouteInfo );
-                         Navigator.of(context).push(MaterialPageRoute(builder:(context) {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
                             return SignUp();
-                          },));
+                          },
+                        ));
                       },
                       child: Text(
                         'Sign up.',
                         style: AppTypography.bText12b,
                       ),
                     )
-                   
                   ],
                 )
               ],

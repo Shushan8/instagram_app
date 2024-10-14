@@ -1,9 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepo {
+  final _auth = FirebaseAuth.instance;
+
+  bool checkIfUserSignedIn() {
+    final user = _auth.currentUser;
+    final authenticated = user != null;
+    return authenticated;
+  }
+
+  void signOut() {
+    _auth.signOut();
+  }
+
   Future<User?> createUserWithEmailPassword(
       String email, String password) async {
-    final _auth = FirebaseAuth.instance;
     try {
       final x = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
