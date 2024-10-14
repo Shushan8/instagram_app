@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
@@ -8,17 +9,13 @@ import 'package:instagram_test_app/feauture/presentation/page/register/widgets/s
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key});
+class LogInPageScreen extends StatelessWidget {
+  const LogInPageScreen({super.key});
 
-  @override
-  State<LogIn> createState() => _LogInState();
-}
-
-class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SizedBox(
         width: double.infinity,
         child: Column(
