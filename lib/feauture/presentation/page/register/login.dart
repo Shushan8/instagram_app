@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
@@ -7,7 +6,6 @@ import 'package:instagram_test_app/feauture/presentation/page/register/login_scr
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
-
 
 class LogInPageScreen extends StatelessWidget {
   const LogInPageScreen({super.key});
