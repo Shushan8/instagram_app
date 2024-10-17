@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-// <<<<<<<< HEAD:lib/presentation/page/instagrammain/widget/story/story.dart
- import 'package:instagram_test_app/presentation/core/ui/text_styles.dart';
- import 'package:instagram_test_app/presentation/page/instagrammain/widget/story/story_widget.dart';
-// ========
- //import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
- import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
-// >>>>>>>> 292b3867d923726f4769154ede67d88edf7fe05a:lib/feauture/presentation/page/instagram_main/widget/story/story.dart
- import 'package:instagram_test_app/gen/assets.gen.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Story extends StatelessWidget {
   const Story({super.key});
@@ -54,14 +49,14 @@ class Story extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
-                      // StoryWidget(
-                      //   width: 70,
-                      //   height: 69,
-                      //   image: imagePaths[index],
-                      //   gradient: true,
-                      //   padin: 2.5,
-                      //   widthcont: 2,
-                      // ),
+                      StoryWidget(
+                        width: 70,
+                        height: 69,
+                        image: imagePaths[index],
+                        gradient: true,
+                        padin: 2.5,
+                        widthcont: 2,
+                      ),
                       Text(
                         textStory[index],
                         style: AppTypography.bText12,

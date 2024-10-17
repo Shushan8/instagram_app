@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
-// <<<<<<<< HEAD:lib/presentation/page/instagramprofile/instagram_profile.dart
-import 'package:instagram_test_app/presentation/core/ui/colors.dart';
-import 'package:instagram_test_app/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/presentation/page/instagramprofile/widgets/profile_appBar.dart';
-import 'package:instagram_test_app/presentation/page/instagramprofile/widgets/profile_followes.dart';
-import 'package:instagram_test_app/presentation/page/instagramprofile/widgets/profile_histories.dart';
-import 'package:instagram_test_app/presentation/page/instagramprofile/widgets/profile_tab_bar.dart';
-import 'package:instagram_test_app/presentation/page/instagramprofile/widgets/user_contacts.dart';
-// ========
-// import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
-// import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
+import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_appBar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_followes.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_histories.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_tab_bar.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/user_contacts.dart';
-
-import '../profail_menu/profail_menu.dart';
-//import 'package:instagram_test_app/feauture/presentation/page/profail_menu/profail_menu.dart';
-//>>>>>>>> 292b3867d923726f4769154ede67d88edf7fe05a:lib/feauture/presentation/page/instagram_profile/instagram_profile.dart
+import 'package:instagram_test_app/feauture/presentation/page/profail_menu/profail_menu.dart';
 
 class InstagramProfile extends StatelessWidget {
   const InstagramProfile({super.key});

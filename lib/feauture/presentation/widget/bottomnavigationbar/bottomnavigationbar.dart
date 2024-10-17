@@ -3,18 +3,7 @@ import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_main/instagram_main.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
 import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/instagram_profile.dart';
-// <<<<<<< HEAD:lib/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart
-//  import 'package:instagram_test_app/presentation/core/ui/svg_icon.dart';
-//  import 'package:instagram_test_app/presentation/page/instagrammain/instagram_main.dart';
-//  import 'package:instagram_test_app/presentation/page/instagrammain/widget/story/story_widget.dart';
-//  import 'package:instagram_test_app/presentation/page/instagramprofile/instagram_profile.dart';
-// =======
-// import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
-// import 'package:instagram_test_app/feauture/presentation/page/instagram_main/instagram_main.dart';
-// import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
-// import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/instagram_profile.dart';
-// >>>>>>> 292b3867d923726f4769154ede67d88edf7fe05a:lib/feauture/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart
- import 'package:instagram_test_app/gen/assets.gen.dart';
+import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class BottomNavigationBarApp extends StatelessWidget {
   const BottomNavigationBarApp({super.key});
