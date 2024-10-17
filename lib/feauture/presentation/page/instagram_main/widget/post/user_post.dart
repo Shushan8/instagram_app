@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class UserPost extends StatelessWidget {
@@ -17,10 +17,13 @@ class UserPost extends StatelessWidget {
           child: Row(
             children: [
               StoryWidget(
-                  image: Assets.images.postuserimage.path,
-                  gradient: false,
-                  width: 30,
-                  height: 40, padin: 0,widthcont: 0,),
+                image: Assets.images.postuserimage.path,
+                gradient: false,
+                width: 30,
+                height: 40,
+                padin: 0,
+                widthcont: 0,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
@@ -28,10 +31,7 @@ class UserPost extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          'joshua_l',
-                          style: AppTypography.boldText13
-                        ),
+                        Text('joshua_l', style: AppTypography.boldText13),
                         SizedBox(
                           width: 5,
                         ),

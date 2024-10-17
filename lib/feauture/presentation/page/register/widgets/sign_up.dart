@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/blocs/basic_auth/basic_auth_bloc.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/blocs/basic_auth/basic_auth_event.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/google_auth/google_auth_bloc.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/google_auth/google_auth_event.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/google_auth/google_auth_state.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/login_screen.dart';
+import 'package:instagram_test_app/feauture/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
@@ -15,11 +19,22 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => BasicAuthBloc(lc()),
-      child: Scaffold(
-        appBar: AppBar(),
-        body: Padding(
+    return Scaffold(
+      appBar: AppBar(),
+      body: BlocListener<GoogleAuthBloc, GoogleAuthState>(
+        listener: (context, state) {
+          if (state is GoogleAuthSuccess) {
+            print('User:: success');
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const BottomNavigationBarApp()),
+                (route) => false);
+          } else {
+            print('-----------------------------');
+          }
+        },
+        child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: SingleChildScrollView(
             child: Column(
@@ -37,7 +52,8 @@ class SignUp extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 RegElevatedbutton(
-                    navFunctoun: () {},
+                    navFunctoun: () =>
+                        context.read<GoogleAuthBloc>().add(SignInEvent()),
                     buttonText: 'Log in with Facebook',
                     backColor: AppColors.blue37),
                 Row(

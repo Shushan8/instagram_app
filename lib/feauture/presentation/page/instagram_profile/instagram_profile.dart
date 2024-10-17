@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_appBar.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_followes.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_histories.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/profile_tab_bar.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/widgets/user_contacts.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_appBar.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_followes.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_histories.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/profile_tab_bar.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/widgets/user_contacts.dart';
 import 'package:instagram_test_app/feauture/presentation/page/profail_menu/profail_menu.dart';
 
 class InstagramProfile extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Comments extends StatelessWidget {
@@ -56,10 +56,8 @@ class Comments extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 5),
             child: RichText(
-              text:  TextSpan(children: [
-                TextSpan(
-                  text: 'joshua_l ',
-                 style: AppTypography.boldText13 ),
+              text: TextSpan(children: [
+                TextSpan(text: 'joshua_l ', style: AppTypography.boldText13),
                 TextSpan(
                     text:
                         'The game in Japan was amazing and I want to share some photos',

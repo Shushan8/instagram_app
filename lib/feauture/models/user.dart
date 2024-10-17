@@ -7,6 +7,5 @@ class User extends Equatable {
   const User({required this.id, this.name, this.password});
   static const empty = User(id: '');
   @override
-  // TODO: implement props
   List<Object?> get props => [id, name, password];
 }

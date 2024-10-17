@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/comments.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/post/user_post.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/post/comments.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/post/user_post.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Post extends StatefulWidget {

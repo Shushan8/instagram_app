@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/blocs/basic_auth/basic_auth_bloc.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/google_auth/google_auth_bloc.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/login_bloc/login_bloc.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/login.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/feauture/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
@@ -32,19 +34,24 @@ class MyApp extends StatelessWidget {
   // AppRouter appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => BasicAuthBloc(lc()),
-        child: MaterialApp(
-          home: lc<AuthRepo>().checkIfUserSignedIn()
-              ? BottomNavigationBarApp()
-              : LoginScreen(),
-        )
-
-        // child: MaterialApp.router(
-        //   routerDelegate: appRouter.delegate(),
-        //   routeInformationParser: appRouter.defaultRouteParser(),
-        // ),
-        );
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => BasicAuthBloc(lc()),
+        ),
+        BlocProvider(
+          create: (context) => GoogleAuthBloc(lc()),
+        ),
+        BlocProvider(
+          create: (context) => LoginBloc(lc()),
+        ),
+      ],
+      child: MaterialApp(
+        home: lc<AuthRepo>().checkIfUserSignedIn()
+            ? BottomNavigationBarApp()
+            : LoginScreen(),
+      ),
+    );
   }
 }
 // import 'package:firebase_core/firebase_core.dart';

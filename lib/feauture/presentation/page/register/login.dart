@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/widgets/sign_up.dart';

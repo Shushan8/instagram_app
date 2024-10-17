@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/instagram_main.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagramprofile/instagram_profile.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/instagram_main.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_profile/instagram_profile.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class BottomNavigationBarApp extends StatelessWidget {

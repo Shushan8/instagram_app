@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class Story extends StatelessWidget {
@@ -25,7 +25,7 @@ class Story extends StatelessWidget {
       'zackjohn',
     ];
     return Container(
-      padding: EdgeInsets.only(top: 9 , bottom: 4 ,left: 10),
+      padding: EdgeInsets.only(top: 9, bottom: 4, left: 10),
       width: double.infinity,
       height: 110,
       decoration: BoxDecoration(
@@ -38,30 +38,34 @@ class Story extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(
-                child: ListView.separated(
-              shrinkWrap: true, 
-              
-              scrollDirection: Axis.horizontal,
-              itemCount: imagePaths.length,
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(endIndent: 15,),
-              itemBuilder: (BuildContext context, int index) {
-                return Column(
-                  children: [
-                    StoryWidget(
-                      width: 70,
-                      height: 69,
-                      image: imagePaths[index],
-                      gradient: true,
-                       padin: 2.5,widthcont: 2,
-                    ),
-                    Text(textStory[index], style: AppTypography.bText12,),
-                  ],
-                );
-              },
-            )
-               
+              child: ListView.separated(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: imagePaths.length,
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(
+                  endIndent: 15,
                 ),
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      StoryWidget(
+                        width: 70,
+                        height: 69,
+                        image: imagePaths[index],
+                        gradient: true,
+                        padin: 2.5,
+                        widthcont: 2,
+                      ),
+                      Text(
+                        textStory[index],
+                        style: AppTypography.bText12,
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

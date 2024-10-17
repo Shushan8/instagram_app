@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/feauture/presentation/page/instagrammain/widget/story/story_widget.dart';
+import 'package:instagram_test_app/feauture/presentation/page/instagram_main/widget/story/story_widget.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
 class ProfileHistorys extends StatelessWidget {
@@ -14,7 +14,6 @@ class ProfileHistorys extends StatelessWidget {
       Assets.images.storyimage.path,
       Assets.images.storyimage1.path,
       Assets.images.storyimage2.path,
-
     ];
     final List<String> textStory = [
       'Your Story',
