@@ -9,6 +9,14 @@ final class CreateUserEmailAndPassword extends AuthEvent {
   CreateUserEmailAndPassword(this.email, this.password);
 }
 
+final class LoginWithEmailAndPassword extends AuthEvent {
+  final String email;
+  final String password;
+  LoginWithEmailAndPassword(this.email, this.password);
+}
+
+final class SignUpWithGoogle extends AuthEvent {}
+
 // final class EmailChanged extends BasicAuthEvent {
 //   EmailChanged(this.email);
 //   final String email;

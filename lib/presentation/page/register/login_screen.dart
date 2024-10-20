@@ -1,20 +1,16 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:instagram_test_app/application/auth/auth_event.dart';
 import 'package:instagram_test_app/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/presentation/core/ui/text_styles.dart';
-import 'package:instagram_test_app/application/auth/basic_auth_bloc.dart';
-import 'package:instagram_test_app/application/auth/basic_auth_state.dart';
-import 'package:instagram_test_app/application/blocs/login_bloc/login_bloc.dart';
-import 'package:instagram_test_app/application/blocs/login_bloc/login_event.dart';
-import 'package:instagram_test_app/application/blocs/login_bloc/login_state.dart';
+import 'package:instagram_test_app/application/auth/auth_bloc.dart';
+import 'package:instagram_test_app/application/auth/auth_state.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_textfiled.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
-import 'package:instagram_test_app/lc.dart';
-import 'package:instagram_test_app/repo/auth_repo/auth_repo.dart';
+import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 // @RoutePage()
 
 class LoginScreen extends StatelessWidget {
@@ -24,8 +20,16 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    return BlocProvider(
-      create: (context) => AuthBloc(lc()),
+    return BlocListener<AuthBloc, AuthState>(
+      listener: (context, state) {
+        if (state is AuthStateSuccess) {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) {
+              return BottomNavigationBarApp();
+            },
+          ));
+        }
+      },
       child: Scaffold(
         appBar: AppBar(),
         body: Padding(
@@ -64,22 +68,43 @@ class LoginScreen extends StatelessWidget {
                     'Forgot password?',
                     style: AppTypography.bText12b,
                   ),
-                  BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-                    return RegElevatedbutton(
-                        navFunctoun: () {
-                          // Navigator.of(context).pop(
-                          //   MaterialPageRoute(
-                          //     builder: (context) {
-                          //       return LoginScreen();
-                          //     },
-                          //   ),
-                          // );
+                  BlocBuilder<AuthBloc, AuthState>(
+                    builder: (context, state) {
+                      if (state is AuthStateLoading) {
+                        return CircularProgressIndicator();
+                      }
+                      return RegElevatedbutton(
+                          navFunctoun: () {
+                            if (emailController.text.isEmpty ||
+                                passwordController.text.isEmpty) {
+                              return;
+                            }
+                            context.read<AuthBloc>().add(
+                                  LoginWithEmailAndPassword(
+                                      emailController.text,
+                                      passwordController.text),
+                                );
+                          },
+                          buttonText: 'Log in',
+                          backColor: AppColors.blue37b);
+                    },
+                  ),
+                  // BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
+                  //   return RegElevatedbutton(
+                  //       navFunctoun: () {
+                  //         // Navigator.of(context).pop(
+                  //         //   MaterialPageRoute(
+                  //         //     builder: (context) {
+                  //         //       return LoginScreen();
+                  //         //     },
+                  //         //   ),
+                  //         // );
 
-                          if (true) {}
-                        },
-                        buttonText: 'Log in',
-                        backColor: AppColors.blue37b);
-                  }),
+                  //         if (true) {}
+                  //       },
+                  //       buttonText: 'Log in',
+                  //       backColor: AppColors.blue37b);
+                  // }),
                   SizedBox(
                     height: 37,
                   ),

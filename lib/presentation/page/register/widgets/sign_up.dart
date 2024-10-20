@@ -2,12 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram_test_app/application/auth/basic_auth_bloc.dart';
-import 'package:instagram_test_app/application/auth/basic_auth_event.dart';
-import 'package:instagram_test_app/application/auth/basic_auth_state.dart';
-import 'package:instagram_test_app/application/blocs/google_auth/google_auth_bloc.dart';
-import 'package:instagram_test_app/application/blocs/google_auth/google_auth_event.dart';
-import 'package:instagram_test_app/application/blocs/google_auth/google_auth_state.dart';
+import 'package:instagram_test_app/application/auth/auth_bloc.dart';
+import 'package:instagram_test_app/application/auth/auth_event.dart';
+import 'package:instagram_test_app/application/auth/auth_state.dart';
 import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
@@ -15,7 +12,6 @@ import 'package:instagram_test_app/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_textfiled.dart';
-import 'package:instagram_test_app/lc.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -30,7 +26,6 @@ class SignUp extends StatelessWidget {
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           log('---------------------------$state');
-          print(state);
           if (state is AuthStateSuccess) {
             print('User:: success');
             Navigator.pushAndRemoveUntil(
@@ -61,7 +56,7 @@ class SignUp extends StatelessWidget {
                 ),
                 RegElevatedbutton(
                     navFunctoun: () =>
-                        context.read<GoogleAuthBloc>().add(SignInEvent()),
+                        context.read<AuthBloc>().add(SignUpWithGoogle()),
                     buttonText: 'Log in with Facebook',
                     backColor: AppColors.blue37),
                 Row(

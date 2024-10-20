@@ -2,15 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_bloc.dart';
-import 'package:instagram_test_app/application/blocs/google_auth/google_auth_bloc.dart';
-import 'package:instagram_test_app/application/blocs/login_bloc/login_bloc.dart';
-import 'package:instagram_test_app/presentation/page/register/login.dart';
 import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/firebase_options.dart';
 import 'package:instagram_test_app/lc.dart';
 import 'package:instagram_test_app/repo/auth_repo/auth_repo.dart';
-import 'package:instagram_test_app/presentation/core/router/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,9 +34,6 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AuthBloc(lc()),
-        ),
-        BlocProvider(
-          create: (context) => GoogleAuthBloc(lc()),
         ),
       ],
       child: MaterialApp(
