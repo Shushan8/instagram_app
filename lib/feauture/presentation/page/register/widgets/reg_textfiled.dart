@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 
 class RegTextfiled extends StatelessWidget {
-  const RegTextfiled({super.key, required this.labText, this.onChanged});
+  const RegTextfiled({super.key, required this.labText, this.controller});
   final String labText;
-  final void Function(String value)? onChanged;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: onChanged,
+      controller: controller,
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(

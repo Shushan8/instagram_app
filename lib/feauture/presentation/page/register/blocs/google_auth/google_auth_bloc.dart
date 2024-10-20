@@ -13,9 +13,9 @@ final class GoogleAuthBloc extends Bloc<GoogleAuthEvent, GoogleAuthState> {
     emit(GoogleAuthPending());
     final user = await _authRepo.signInWithGoogle();
     if (user == null) {
-      return emit(GoogleAuthError());
+      emit(GoogleAuthError());
     }
 
-    return emit(GoogleAuthSuccess());
+    emit(GoogleAuthSuccess());
   }
 }

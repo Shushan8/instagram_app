@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/svg_icon.dart';
 import 'package:instagram_test_app/feauture/presentation/core/ui/text_styles.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/basic_auth/basic_auth_bloc.dart';
+import 'package:instagram_test_app/feauture/presentation/page/register/blocs/basic_auth/basic_auth_state.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/blocs/login_bloc/login_bloc.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/blocs/login_bloc/login_event.dart';
 import 'package:instagram_test_app/feauture/presentation/page/register/blocs/login_bloc/login_state.dart';
@@ -20,8 +22,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     return BlocProvider(
-      create: (context) => LoginBloc(lc()),
+      create: (context) => AuthBloc(lc()),
       child: Scaffold(
         appBar: AppBar(),
         body: Padding(
@@ -38,23 +42,19 @@ class LoginScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
+                  BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
                     return RegTextfiled(
                       labText: 'Name',
-                      onChanged: (value) => context.read<LoginBloc>().add(
-                            ChangeEmail(email: value),
-                          ),
+                      controller: emailController,
                     );
                   }),
                   SizedBox(
                     height: 12,
                   ),
-                  BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
+                  BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
                     return RegTextfiled(
                       labText: 'Password',
-                      onChanged: (value) => context.read<LoginBloc>().add(
-                            ChangePassword(password: value),
-                          ),
+                      controller: passwordController,
                     );
                   }),
                   SizedBox(
@@ -64,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                     'Forgot password?',
                     style: AppTypography.bText12b,
                   ),
-                  BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
+                  BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
                     return RegElevatedbutton(
                         navFunctoun: () {
                           // Navigator.of(context).pop(

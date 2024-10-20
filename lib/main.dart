@@ -37,13 +37,10 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => BasicAuthBloc(lc()),
+          create: (context) => AuthBloc(lc()),
         ),
         BlocProvider(
           create: (context) => GoogleAuthBloc(lc()),
-        ),
-        BlocProvider(
-          create: (context) => LoginBloc(lc()),
         ),
       ],
       child: MaterialApp(

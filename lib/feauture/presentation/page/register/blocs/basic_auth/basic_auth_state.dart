@@ -1,35 +1,19 @@
 import 'package:flutter/foundation.dart';
 
-enum FormStatus {
-  initial,
-  pending,
-  success,
-  error,
-}
+// enum FormStatus {
+//   initial,
+//   pending,
+//   success,
+//   error,
+// }
 
 @immutable
-final class BasicAuthState {
-  final String email;
-  final String password;
-  final FormStatus status;
-  final String? errorMsg;
-  const BasicAuthState({
-    this.email = "",
-    this.password = "",
-    this.status = FormStatus.initial,
-    this.errorMsg,
-  });
+final class AuthState {}
 
-  BasicAuthState copyWith(
-    String? email,
-    String? password,
-    FormStatus? status,
-    String? errorMsg,
-  ) =>
-      BasicAuthState(
-        email: email ?? this.email,
-        password: password ?? this.password,
-        status: status ?? this.status,
-        errorMsg: errorMsg ?? this.errorMsg,
-      );
-}
+final class AuthStateInitial extends AuthState {}
+
+final class AuthStateLoading extends AuthState {}
+
+final class AuthStateSuccess extends AuthState {}
+
+final class AuthStateError extends AuthState {}

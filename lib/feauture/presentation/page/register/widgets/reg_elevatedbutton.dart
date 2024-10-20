@@ -11,25 +11,25 @@ class RegElevatedbutton extends StatelessWidget {
   final String buttonText;
   @override
   Widget build(BuildContext context) {
-    return
-     Padding(
-              padding: const EdgeInsets.fromLTRB(32, 12, 32, 30),
-              child: Container(
-                width: MediaQuery.sizeOf(context).width,
-                padding: const EdgeInsets.only(top: 10),
-                child: ElevatedButton(
-      style: OutlinedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(32, 12, 32, 30),
+      child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        padding: const EdgeInsets.only(top: 10),
+        child: ElevatedButton(
+          style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            backgroundColor: backColor,
+          ),
+          onPressed: navFunctoun,
+          child: Text(
+            buttonText,
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
         ),
-        backgroundColor: backColor,
-       ),
-       onPressed: navFunctoun,
-
-      child: Text(
-        buttonText,
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
-              )));
+    );
   }
 }
