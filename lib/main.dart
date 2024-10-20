@@ -1,16 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram_test_app/feauture/presentation/page/register/blocs/basic_auth/basic_auth_bloc.dart';
-import 'package:instagram_test_app/feauture/presentation/page/register/blocs/google_auth/google_auth_bloc.dart';
-import 'package:instagram_test_app/feauture/presentation/page/register/blocs/login_bloc/login_bloc.dart';
-import 'package:instagram_test_app/feauture/presentation/page/register/login.dart';
-import 'package:instagram_test_app/feauture/presentation/page/register/login_screen.dart';
-import 'package:instagram_test_app/feauture/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
+import 'package:instagram_test_app/application/auth/auth_bloc.dart';
+import 'package:instagram_test_app/application/blocs/google_auth/google_auth_bloc.dart';
+import 'package:instagram_test_app/application/blocs/login_bloc/login_bloc.dart';
+import 'package:instagram_test_app/presentation/page/register/login.dart';
+import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
+import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/firebase_options.dart';
 import 'package:instagram_test_app/lc.dart';
 import 'package:instagram_test_app/repo/auth_repo/auth_repo.dart';
-import 'package:instagram_test_app/router/router.dart';
+import 'package:instagram_test_app/presentation/core/router/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +27,7 @@ void main() async {
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  MyApp({
+  const MyApp({
     super.key,
     // required this.appRouter
   });
