@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_bloc.dart';
+import 'package:instagram_test_app/application/user/bloc/user_bloc.dart';
 import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/firebase_options.dart';
@@ -30,16 +33,19 @@ class MyApp extends StatelessWidget {
   // AppRouter appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
+    final isLoggedIn = lc<AuthRepo>().checkIfUserSignedIn();
+    log('-----------------------000000');
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) => AuthBloc(lc()),
         ),
+        BlocProvider(
+          create: (context) => UserBloc(lc()),
+        ),
       ],
       child: MaterialApp(
-        home: lc<AuthRepo>().checkIfUserSignedIn()
-            ? BottomNavigationBarApp()
-            : LoginScreen(),
+        home: isLoggedIn ? BottomNavigationBarApp() : LoginScreen(),
       ),
     );
   }

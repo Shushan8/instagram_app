@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_event.dart';
@@ -11,8 +12,8 @@ import 'package:instagram_test_app/presentation/page/register/widgets/reg_textfi
 import 'package:instagram_test_app/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
-// @RoutePage()
 
+@RoutePage()
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -146,11 +147,13 @@ class LoginScreen extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           // context.pushRoute(SignUp() as PageRouteInfo );
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) {
-                              return SignUp();
-                            },
-                          ));
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return SignUp();
+                              },
+                            ),
+                          );
                         },
                         child: Text(
                           'Sign up.',

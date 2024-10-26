@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_event.dart';
 import 'package:instagram_test_app/application/auth/auth_state.dart';
+import 'package:instagram_test_app/application/user/bloc/user_bloc.dart';
 import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
@@ -20,6 +21,8 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    TextEditingController fullNameController = TextEditingController();
+    TextEditingController userNameController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(),
@@ -28,6 +31,12 @@ class SignUp extends StatelessWidget {
           log('---------------------------$state');
           if (state is AuthStateSuccess) {
             print('User:: success');
+            context.read<UserBloc>().add(
+                  CreateUser(
+                    fullName: fullNameController.text,
+                    userName: userNameController.text,
+                  ),
+                );
             Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
@@ -85,11 +94,17 @@ class SignUp extends StatelessWidget {
                     SizedBox(
                       height: 12,
                     ),
-                    RegTextfiled(labText: 'Full Name'),
+                    RegTextfiled(
+                      controller: fullNameController,
+                      labText: 'Full Name',
+                    ),
                     SizedBox(
                       height: 12,
                     ),
-                    RegTextfiled(labText: 'Username'),
+                    RegTextfiled(
+                      controller: userNameController,
+                      labText: 'Username',
+                    ),
                     SizedBox(
                       height: 12,
                     ),
@@ -148,19 +163,20 @@ class SignUp extends StatelessWidget {
                           return CircularProgressIndicator();
                         }
                         return RegElevatedbutton(
-                            navFunctoun: () {
-                              if (emailController.text.isEmpty ||
-                                  passwordController.text.isEmpty) {
-                                return;
-                              }
-                              context.read<AuthBloc>().add(
-                                    CreateUserEmailAndPassword(
-                                        emailController.text,
-                                        passwordController.text),
-                                  );
-                            },
-                            buttonText: 'Sign up',
-                            backColor: AppColors.blue37);
+                          navFunctoun: () {
+                            if (emailController.text.isEmpty ||
+                                passwordController.text.isEmpty) {
+                              return;
+                            }
+                            context.read<AuthBloc>().add(
+                                  CreateUserEmailAndPassword(
+                                      emailController.text,
+                                      passwordController.text),
+                                );
+                          },
+                          buttonText: 'Sign up',
+                          backColor: AppColors.blue37,
+                        );
                       },
                     ),
                     Row(
