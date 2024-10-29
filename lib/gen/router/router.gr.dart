@@ -1,29 +1,67 @@
-// // GENERATED CODE - DO NOT MODIFY BY HAND
+// GENERATED CODE - DO NOT MODIFY BY HAND
 
-// // **************************************************************************
-// // AutoRouterGenerator
-// // **************************************************************************
+// **************************************************************************
+// AutoRouterGenerator
+// **************************************************************************
 
-// // ignore_for_file: type=lint
-// // coverage:ignore-file
+// ignore_for_file: type=lint
+// coverage:ignore-file
 
-// part of 'router.dart';
+part of 'router.dart';
 
-// /// generated route for
-// /// [LoginScreen]
-// class LoginRoute extends PageRouteInfo<void> {
-//   const LoginRoute({List<PageRouteInfo>? children})
-//       : super(
-//           LoginRoute.name,
-//           initialChildren: children,
-//         );
+/// generated route for
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
 
-//   static const String name = 'LoginRoute';
+  static const String name = 'HomeRoute';
 
-//   static PageInfo page = PageInfo(
-//     name,
-//     builder: (data) {
-//       return const LoginScreen();
-//     },
-//   );
-// }
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HomeScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [LoginScreen]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute({List<PageRouteInfo>? children})
+      : super(
+          LoginRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LoginRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LoginScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [SignUpScreen]
+class SignUpRoute extends PageRouteInfo<void> {
+  const SignUpRoute({List<PageRouteInfo>? children})
+      : super(
+          SignUpRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SignUpScreen();
+    },
+  );
+}

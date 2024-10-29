@@ -11,7 +11,10 @@ final class UserStateInitial extends UserState {}
 
 final class UserStateLoading extends UserState {}
 
-final class UserStateSuccess extends UserState {}
+final class UserStateSuccess extends UserState {
+  UserDto userDto;
+  UserStateSuccess({required this.userDto});
+}
 
 final class UserStateError extends UserState {
   final String errorMsg;

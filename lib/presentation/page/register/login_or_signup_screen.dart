@@ -1,14 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_test_app/gen/router/router.dart';
 import 'package:instagram_test_app/presentation/core/ui/colors.dart';
 import 'package:instagram_test_app/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/presentation/page/instagram_main/widget/story/story_widget.dart';
-import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_elevatedbutton.dart';
-import 'package:instagram_test_app/presentation/page/register/widgets/sign_up.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 
-class LogInPageScreen extends StatelessWidget {
-  const LogInPageScreen({super.key});
+class LogInOrSignUp extends StatelessWidget {
+  const LogInOrSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +57,7 @@ class LogInPageScreen extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(32, 12, 32, 30),
                     child: RegElevatedbutton(
                       navFunctoun: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) {
-                            return LoginScreen();
-                          },
-                        ));
+                        context.pushRoute(LoginRoute() as PageRouteInfo);
                       },
                       backColor: AppColors.blue37,
                       buttonText: 'Log in',
@@ -75,29 +71,26 @@ class LogInPageScreen extends StatelessWidget {
               ),
             ),
             Padding(
-                padding: const EdgeInsets.only(bottom: 12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don’t have an account? ',
-                      style: AppTypography.bText12,
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don’t have an account? ',
+                    style: AppTypography.bText12,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      context.pushRoute(SignUpRoute() as PageRouteInfo);
+                    },
+                    child: Text(
+                      'Sign up.',
+                      style: AppTypography.boldText12,
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) {
-                            return SignUp();
-                          },
-                        ));
-                      },
-                      child: Text(
-                        'Sign up.',
-                        style: AppTypography.boldText12,
-                      ),
-                    )
-                  ],
-                )),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

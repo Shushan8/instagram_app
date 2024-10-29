@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_test_app/presentation/core/ui/svg_icon.dart';
-import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
+import 'package:instagram_test_app/presentation/page/register/screen/login_screen.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 import 'package:instagram_test_app/lc.dart';
 import 'package:instagram_test_app/repo/auth_repo/auth_repo.dart';

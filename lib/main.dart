@@ -1,15 +1,14 @@
 import 'dart:developer';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_bloc.dart';
 import 'package:instagram_test_app/application/user/bloc/user_bloc.dart';
-import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
-import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
+import 'package:instagram_test_app/gen/router/router.dart';
 import 'package:instagram_test_app/firebase_options.dart';
 import 'package:instagram_test_app/lc.dart';
-import 'package:instagram_test_app/repo/auth_repo/auth_repo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +17,12 @@ void main() async {
   );
   await initializeDependencies();
   // final appRouter = AppRouter();
-
+  final FirebaseFirestore db = FirebaseFirestore.instance;
+  final CollectionReference users = db.collection('users');
+  final auth = FirebaseAuth.instance.currentUser!.uid;
+  final DocumentSnapshot snapshot = await users.doc('$auth').get();
+  final userFields = snapshot.data();
+  log(userFields.toString());
   runApp(MyApp(
       // appRouter: appRouter
       ));
@@ -33,8 +37,8 @@ class MyApp extends StatelessWidget {
   // AppRouter appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    final isLoggedIn = lc<AuthRepo>().checkIfUserSignedIn();
     log('-----------------------000000');
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -44,37 +48,9 @@ class MyApp extends StatelessWidget {
           create: (context) => UserBloc(lc()),
         ),
       ],
-      child: MaterialApp(
-        home: isLoggedIn ? BottomNavigationBarApp() : LoginScreen(),
+      child: MaterialApp.router(
+        routerConfig: AppRouter().config(),
       ),
     );
   }
 }
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
-// import 'package:instagram_test_app/firebase_options.dart';
-// import 'package:instagram_test_app/router/router.dart';
-
-
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(
-//     options: DefaultFirebaseOptions().currentPlatform,
-//   );
-//   final appRouter = AppRouter();
-//   runApp(MyApp(appRouter: appRouter));
-// }
-
-// class MyApp extends StatelessWidget {
-//   final AppRouter appRouter;
-
-//   MyApp({Key? key, required this.appRouter}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp.router(
-//       routerDelegate: appRouter.delegate(),
-//       routeInformationParser: appRouter.defaultRouteParser(),
-//     );
-//   }
-// }

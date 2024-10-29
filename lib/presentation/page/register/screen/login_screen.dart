@@ -9,7 +9,7 @@ import 'package:instagram_test_app/application/auth/auth_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_state.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_textfiled.dart';
-import 'package:instagram_test_app/presentation/page/register/widgets/sign_up.dart';
+import 'package:instagram_test_app/presentation/page/register/screen/sign_up_screen.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 
@@ -75,19 +75,21 @@ class LoginScreen extends StatelessWidget {
                         return CircularProgressIndicator();
                       }
                       return RegElevatedbutton(
-                          navFunctoun: () {
-                            if (emailController.text.isEmpty ||
-                                passwordController.text.isEmpty) {
-                              return;
-                            }
-                            context.read<AuthBloc>().add(
-                                  LoginWithEmailAndPassword(
-                                      emailController.text,
-                                      passwordController.text),
-                                );
-                          },
-                          buttonText: 'Log in',
-                          backColor: AppColors.blue37b);
+                        navFunctoun: () {
+                          if (emailController.text.isEmpty ||
+                              passwordController.text.isEmpty) {
+                            return;
+                          }
+                          context.read<AuthBloc>().add(
+                                LoginWithEmailAndPassword(
+                                  emailController.text,
+                                  passwordController.text,
+                                ),
+                              );
+                        },
+                        buttonText: 'Log in',
+                        backColor: AppColors.blue37b,
+                      );
                     },
                   ),
                   // BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
@@ -150,7 +152,7 @@ class LoginScreen extends StatelessWidget {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                               builder: (context) {
-                                return SignUp();
+                                return SignUpScreen();
                               },
                             ),
                           );

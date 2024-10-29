@@ -16,3 +16,10 @@ final class CreateUser extends UserEvent {
     required this.userName,
   });
 }
+
+final class GetUser extends UserEvent {
+  final String uid = FirebaseAuth.instance.currentUser!.uid;
+  // const GetUser({
+  //   this.uid = FirebaseAuth.instance.currentUser.uid,
+  // });
+}

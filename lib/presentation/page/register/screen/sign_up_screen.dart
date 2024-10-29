@@ -1,12 +1,14 @@
 import 'dart:developer';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_bloc.dart';
 import 'package:instagram_test_app/application/auth/auth_event.dart';
 import 'package:instagram_test_app/application/auth/auth_state.dart';
 import 'package:instagram_test_app/application/user/bloc/user_bloc.dart';
-import 'package:instagram_test_app/presentation/page/register/login_screen.dart';
+import 'package:instagram_test_app/gen/router/router.dart';
+import 'package:instagram_test_app/presentation/page/register/screen/login_screen.dart';
 import 'package:instagram_test_app/presentation/widget/bottomnavigationbar/bottomnavigationbar.dart';
 import 'package:instagram_test_app/gen/assets.gen.dart';
 import 'package:instagram_test_app/presentation/core/ui/colors.dart';
@@ -14,8 +16,9 @@ import 'package:instagram_test_app/presentation/core/ui/text_styles.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_elevatedbutton.dart';
 import 'package:instagram_test_app/presentation/page/register/widgets/reg_textfiled.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+@RoutePage()
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -188,11 +191,12 @@ class SignUp extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.of(context).pop(MaterialPageRoute(
-                              builder: (context) {
-                                return LoginScreen();
-                              },
-                            ));
+                            // Navigator.of(context).pop(MaterialPageRoute(
+                            //   builder: (context) {
+                            //     return LoginScreen();
+                            //   },
+                            // ));
+                            context.pushRoute(LoginRoute());
                           },
                           child: Text(
                             'Log in',
